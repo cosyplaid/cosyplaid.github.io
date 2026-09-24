@@ -1,0 +1,340 @@
+/* ========================================
+   ПЕРЕМЕННЫЕ РЕЗЮМЕ
+   Pantone-палитра светлой темы сайта
+   ======================================== */
+:root {
+    /* Текст — Pantone 412 C, 4625 C, 7530 C */
+    --resume-text-primary: #2C2418;      /* Pantone 412 C — Espresso */
+    --resume-text-secondary: #5C4A3A;    /* Pantone 4625 C — Cocoa */
+    --resume-text-muted: #6B5A48;        /* Тёмный вариант — для контраста */
+
+    /* Акцент — Pantone 2727 C, 2728 C */
+    --resume-accent: #3B82F6;            /* Pantone 2727 C — Luminous Blue */
+    --resume-accent-hover: #60A5FA;      /* Pantone 2728 C — Poseidon */
+
+    /* Границы — Pantone 9226 C */
+    --resume-border: #E0D5C2;            /* Pantone 9226 C — Soft Clay */
+
+    /* Фоны — Pantone 9224 C, 9225 C, 9226 C */
+    --resume-bg-page: #FDFBF7;           /* Pantone 9224 C — Vanilla Cream */
+    --resume-bg-card: #F5F0E8;           /* Pantone 9225 C — Warm White */
+    --resume-bg-light: #E8DFD0;          /* Pantone 9226 C — Candied Ginger */
+
+    /* Тень — в тон Espresso */
+    --resume-shadow: 0 8px 32px rgba(44, 36, 24, 0.08);
+}
+
+/* ========================================
+   СТРАНИЦА РЕЗЮМЕ (ВСЕГДА СВЕТЛАЯ)
+   ======================================== */
+.resume-page {
+    padding: 100px 0 60px;
+    background: var(--resume-bg-page);
+    min-height: 100vh;
+}
+
+.resume {
+    background: var(--resume-bg-card);
+    border-radius: var(--radius-lg);
+    padding: 48px 40px;
+    border: 1px solid var(--resume-border);
+    box-shadow: var(--resume-shadow);
+}
+
+/* ========================================
+   ШАПКА РЕЗЮМЕ
+   ======================================== */
+.resume__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--resume-border);
+}
+
+.resume__name {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--resume-text-primary);
+    letter-spacing: -0.02em;
+}
+
+.resume__role {
+    font-size: 1.125rem;
+    color: var(--resume-text-secondary);
+    margin-top: 4px;
+}
+
+.resume__actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* Кнопки резюме — только переопределение цветов.
+   Базовые стили (.btn--primary, .btn--secondary) в style.css. */
+.resume .btn--primary {
+    background: var(--resume-accent);
+    color: #ffffff;
+}
+
+.resume .btn--secondary {
+    background: var(--resume-bg-card);
+    color: var(--resume-text-primary);
+    border-color: var(--resume-border);
+}
+
+/* ========================================
+   КРАТКО О СЕБЕ
+   ======================================== */
+.resume__summary {
+    margin-bottom: 32px;
+    padding: 16px 20px;
+    background: var(--resume-bg-light);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--resume-text-secondary);
+}
+
+.resume__summary p {
+    font-size: 0.95rem;
+    color: var(--resume-text-secondary);
+    line-height: 1.8;
+    margin: 0 0 8px;
+}
+
+.resume__summary p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   СЕТКА
+   ======================================== */
+.resume__grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+}
+
+.resume__block {
+    margin-bottom: 32px;
+}
+
+.resume__block:last-child {
+    margin-bottom: 0;
+}
+
+.resume__block-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--resume-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--resume-border);
+}
+
+/* ========================================
+   КОНТАКТЫ
+   ======================================== */
+.resume__contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.resume__contact-list li {
+    font-size: 0.9rem;
+    color: var(--resume-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.resume__contact-list a {
+    color: var(--resume-text-secondary);
+    transition: color 0.2s;
+}
+
+.resume__contact-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--resume-text-secondary);
+    flex-shrink: 0;
+}
+
+/* ========================================
+   НАВЫКИ
+   ======================================== */
+.resume__skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.resume__skill-list li {
+    font-size: 0.875rem;
+    color: var(--resume-text-secondary);
+    line-height: 1.5;
+}
+
+.resume__skill-label {
+    font-weight: 600;
+    color: var(--resume-text-primary);
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* ========================================
+   ЯЗЫКИ
+   ======================================== */
+.resume__lang-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.resume__lang-list li {
+    font-size: 0.9rem;
+    color: var(--resume-text-secondary);
+    display: flex;
+    justify-content: space-between;
+}
+
+.resume__lang-label {
+    font-weight: 500;
+    color: var(--resume-text-primary);
+}
+
+/* ========================================
+   ОПЫТ И ОБРАЗОВАНИЕ
+   ======================================== */
+.resume__item {
+    margin-bottom: 24px;
+}
+
+.resume__item:last-child {
+    margin-bottom: 0;
+}
+
+.resume__item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.resume__item-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--resume-text-primary);
+}
+
+.resume__item-date {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--resume-text-muted);
+}
+
+.resume__item-company {
+    font-size: 0.9rem;
+    color: var(--resume-text-secondary);
+    margin: 4px 0 8px;
+}
+
+.resume__item-desc {
+    padding-left: 20px;
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--resume-text-secondary);
+    line-height: 1.7;
+}
+
+.resume__item-desc li {
+    list-style-type: disc;
+    margin-bottom: 2px;
+}
+
+/* ========================================
+   ФУТЕР
+   ======================================== */
+.resume-footer {
+    border-top: 1px solid var(--resume-border);
+    padding: 32px 0;
+    color: var(--resume-text-muted);
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+/* ========================================
+   АДАПТИВ
+   ======================================== */
+@media (max-width: 768px) {
+    .resume-page {
+        padding: 80px 0 40px;
+    }
+
+    .resume {
+        padding: 32px 20px;
+    }
+
+    .resume__header {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .resume__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .resume__name {
+        font-size: 2rem;
+    }
+
+    .resume__actions {
+        width: 100%;
+    }
+
+    .resume__actions .btn {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .resume__item-header {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .resume__item-date {
+        font-size: 0.8rem;
+    }
+}
+
+/* ========================================
+   HOVER — только для устройств с мышью
+   ======================================== */
+@media (hover: hover) and (pointer: fine) {
+    .resume .btn--primary:hover {
+        background: var(--resume-accent-hover);
+        transform: translateY(-2px);
+    }
+
+    .resume .btn--secondary:hover {
+        background: var(--resume-bg-light);
+        transform: translateY(-2px);
+    }
+
+    .resume__contact-list a:hover {
+        color: var(--resume-accent);
+    }
+}

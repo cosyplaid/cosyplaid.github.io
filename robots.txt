@@ -1,0 +1,15 @@
+# robots.txt для https://cosyplaid.github.io
+# Документация: https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+
+# Служебные файлы, не нужно индексировать
+Disallow: /js/
+Disallow: /styles/
+
+# Разрешаем ресурсы — это нужно для корректного рендеринга страниц
+Allow: /resources/
+
+# Карта сайта
+Sitemap: https://cosyplaid.github.io/sitemap.xml

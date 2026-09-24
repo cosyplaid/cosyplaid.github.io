@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ru" data-title-key="index.docTitle" data-description-key="index.docDescription">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    
+    <!-- ====== SEO ====== -->
+    <title>Валентин Сенин — Unity / Fullstack-разработчик</title>
+    <meta name="description" content="Личный сайт-визитка разработчика игр и веб-приложений. Unity, C#, PHP, React." />
+    <meta name="author" content="Валентин Сенин" />
+    
+    <!-- ====== OPEN GRAPH ====== -->
+    <meta property="og:title" content="Валентин Сенин — Unity / Fullstack-разработчик" />
+    <meta property="og:description" content="Личный сайт-визитка разработчика игр и веб-приложений." />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale:alternate" content="en_US" />
+    
+    <meta property="og:image" content="https://cosyplaid.github.io/resources/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="Валентин Сенин — Unity / Fullstack-разработчик" />
+    
+    <meta property="og:url" content="https://cosyplaid.github.io/" />
+    <meta property="og:type" content="website" />
+    
+    <!-- ====== STRUCTURED DATA ====== -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Valentin Senin",
+          "jobTitle": "Unity / Fullstack Developer",
+          "url": "https://cosyplaid.github.io",
+          "sameAs": [
+            "https://github.com/cosyplaid",
+            "https://t.me/cosyplaid"
+          ]
+        }
+    </script>
+    
+    <link rel="icon" href="resources/favicon.ico" type="image/x-icon" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    
+    <script src="js/i18n.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/nav.js" defer></script>
+    <script src="js/modal.js" defer></script>
+    <!--theme, nav, modal регистрируют себя в window.App -> main,js вызвает init()-->
+    <script src="js/main.js" defer></script>
+    
+    <script>
+        // Тема из localStorage — синхронно, без defer, чтобы избежать FOUC
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const theme = saved === 'light' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+
+    <!-- ========== ПЕРЕКЛЮЧАТЕЛЬ ТЕМ ========== -->
+    <div class="theme-switcher">
+        <label class="toggle-switch">
+            <input type="checkbox" id="theme-toggle" aria-label="Переключить тему" />
+            <span class="toggle-slider" aria-hidden="true"></span>
+        </label>
+    </div>
+
+    <!-- ========== ШАПКА ========== -->
+<header class="header user-select-none">
+    <div class="container header__inner">
+        <a href="index.html" class="logo">
+            <span data-i18n="logo.name">Валентин Сенин</span>
+        </a>
+        
+        <nav class="nav" id="main-nav" aria-label="Основная навигация">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#about" class="nav__link"><span data-i18n="nav.about">Обо мне</span></a>
+                </li>
+                <li class="nav__item">
+                    <a href="#projects" class="nav__link"><span data-i18n="nav.projects">Проекты</span></a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contacts" class="nav__link"><span data-i18n="nav.contacts">Контакты</span></a>
+                </li>
+
+                <!-- Вертикальный разделитель для ПК -->
+                <li class="nav__divider" aria-hidden="true">|</li>
+
+                <!-- Горизонтальный разделитель для мобилок -->
+                <li class="nav__divider-mobile" aria-hidden="true"></li>
+
+                <li class="nav__item">
+                    <a href="resume.html"
+                        class="nav__link nav__link--external"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <span data-i18n="nav.resume">Резюме</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="lang-switcher" role="group" aria-label="Переключение языка">
+            <button class="lang-btn active" type="button" data-lang="ru" aria-pressed="true" aria-label="Русский">RU</button>
+            <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+        </div>
+        
+        <button class="burger"
+                type="button"
+                aria-label="Меню"
+                aria-expanded="false"
+                aria-controls="main-nav">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+        </button>
+    </div>
+</header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero user-select-none">
+        <div class="hero__image-wrapper">
+            <div class="hero__image">
+                <img src="resources/bg.jpg" alt="Валентин Сенин" fetchpriority="high" decoding="async" />
+            </div>
+            <div class="hero__content">
+                <h1 class="hero__title" data-i18n="hero.title">
+                    Привет, я <span class="hero__title-accent">Валентин</span>
+                </h1>
+                <p class="hero__subtitle" data-i18n="hero.subtitle">
+                    Создаю игры и веб-приложения, которые решают задачи
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ТЕХНОЛОГИИ ========== -->
+    <section class="tech-stack user-select-none">
+        <div class="tech-stack__wrapper">
+            <div class="tech-stack__scroll-container">
+                <div class="tech-stack__scroll">
+                    <div class="tech-stack__track">
+                        <span class="tech-stack__item"><i class="devicon-csharp-plain"></i> C#</span>
+                        <span class="tech-stack__item"><i class="devicon-php-plain"></i> PHP</span>
+                        <span class="tech-stack__item"><i class="devicon-html5-plain"></i> HTML</span>
+                        <span class="tech-stack__item"><i class="devicon-css3-plain"></i> CSS</span>
+                        <span class="tech-stack__item"><i class="devicon-javascript-plain"></i> JavaScript</span>
+                        <span class="tech-stack__item"><i class="devicon-typescript-plain"></i> TypeScript</span>
+                        <span class="tech-stack__item"><i class="devicon-react-original"></i> React</span>
+                        <span class="tech-stack__item"><i class="devicon-nodejs-plain-wordmark"></i> Node.js</span>
+                        <span class="tech-stack__item"><i class="devicon-postgresql-plain"></i> PostgreSQL</span>
+                        <span class="tech-stack__item"><i class="devicon-unity-plain"></i> Unity</span>
+                        <span class="tech-stack__item"><i class="devicon-javascript-plain"></i> Phaser.JS</span>
+                        <span class="tech-stack__item"><i class="devicon-photoshop-plain"></i> Photoshop</span>
+                        <span class="tech-stack__item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.81 16.195c-1.19 2.081-2.379 5.55-2.775 7.631c-1.388 7.037.198 18.236 3.964 19.525c3.865 1.288 10.307-6.046 13.479-11.398c1.387-2.28 2.676-6.244 2.973-9.118" />
+                                <path d="M24.622 11.933c-.793-1.387-2.874-3.37-4.857-3.27h0c-4.261.099-7.83 3.964-7.334 6.739c.397 1.685 3.965.198 7.83-.793m9.911 4.261c1.486 2.479 3.171 5.452 4.559 5.452c2.478.099 2.28-6.541-.496-9.614c-1.09-1.288-3.766-1.883-5.847-1.288" />
+                                <path d="M26.505 12.627c4.856 1.685 4.162 4.46 3.37 6.244c-.992 2.478-4.163 5.253-6.74 4.46h0c-2.577-.793-4.163-5.352-2.478-9.614c.991-2.478 3.37-1.883 5.848-1.09M32.65 4.5c-.992.694-2.18 1.784-3.271 3.27c-1.09 1.487-2.379 3.668-2.874 4.758" />
+                            </svg>
+                            FL Studio
+                        </span>
+                        <!-- Дублируем для анимации -->
+                        <span class="tech-stack__item"><i class="devicon-csharp-plain"></i> C#</span>
+                        <span class="tech-stack__item"><i class="devicon-php-plain"></i> PHP</span>
+                        <span class="tech-stack__item"><i class="devicon-html5-plain"></i> HTML</span>
+                        <span class="tech-stack__item"><i class="devicon-css3-plain"></i> CSS</span>
+                        <span class="tech-stack__item"><i class="devicon-javascript-plain"></i> JavaScript</span>
+                        <span class="tech-stack__item"><i class="devicon-typescript-plain"></i> TypeScript</span>
+                        <span class="tech-stack__item"><i class="devicon-react-original"></i> React</span>
+                        <span class="tech-stack__item"><i class="devicon-nodejs-plain-wordmark"></i> Node.js</span>
+                        <span class="tech-stack__item"><i class="devicon-postgresql-plain"></i> PostgreSQL</span>
+                        <span class="tech-stack__item"><i class="devicon-unity-plain"></i> Unity</span>
+                        <span class="tech-stack__item"><i class="devicon-javascript-plain"></i> Phaser.JS</span>
+                        <span class="tech-stack__item"><i class="devicon-photoshop-plain"></i> Photoshop</span>
+                        <span class="tech-stack__item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.81 16.195c-1.19 2.081-2.379 5.55-2.775 7.631c-1.388 7.037.198 18.236 3.964 19.525c3.865 1.288 10.307-6.046 13.479-11.398c1.387-2.28 2.676-6.244 2.973-9.118" />
+                                <path d="M24.622 11.933c-.793-1.387-2.874-3.37-4.857-3.27h0c-4.261.099-7.83 3.964-7.334 6.739c.397 1.685 3.965.198 7.83-.793m9.911 4.261c1.486 2.479 3.171 5.452 4.559 5.452c2.478.099 2.28-6.541-.496-9.614c-1.09-1.288-3.766-1.883-5.847-1.288" />
+                                <path d="M26.505 12.627c4.856 1.685 4.162 4.46 3.37 6.244c-.992 2.478-4.163 5.253-6.74 4.46h0c-2.577-.793-4.163-5.352-2.478-9.614c.991-2.478 3.37-1.883 5.848-1.09M32.65 4.5c-.992.694-2.18 1.784-3.271 3.27c-1.09 1.487-2.379 3.668-2.874 4.758" />
+                            </svg>
+                            FL Studio
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ОБО МНЕ ========== -->
+    <section id="about" class="about section-gradient">
+        <div class="container">
+            <h2 class="section-title" data-i18n="about.title">Обо мне</h2>
+            
+            <div class="about__grid">
+                <div class="about__content">
+                    <p data-i18n="about.p1"><strong>Unity и C# разработчик...</strong> ...</p>
+                    <p data-i18n="about.p2">В работе придерживаюсь принципов...</p>
+                    <p data-i18n="about.p3"><strong>Сейчас активно развиваюсь...</strong></p>
+                    
+                    <span class="about__location tag user-select-none" data-i18n="about.location">Тюмень, Россия</span>
+                    
+                    <div class="about__actions user-select-none">
+                        <a href="resume.html" class="btn btn--secondary">
+                            <span data-i18n="about.resume">Моё резюме</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="skills">
+                    <div class="skills__columns">
+                        <div class="skills__column">
+                            <div class="skills__header">
+                                <span class="skills__label" data-i18n="skills.web">Веб-разработка</span>
+                                <span class="skills__percent">68%</span>
+                            </div>
+                            <div class="skills__bar">
+                                <div class="skills__bar-fill" style="width: 68%;"></div>
+                            </div>
+                            <div class="skills__stack user-select-none">
+                                <span class="tag tag--small">PHP</span>
+                                <span class="tag tag--small">HTML</span>
+                                <span class="tag tag--small">CSS</span>
+                                <span class="tag tag--small">JavaScript</span>
+                                <span class="tag tag--small">SQL</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skills__column">
+                            <div class="skills__header">
+                                <span class="skills__label" data-i18n="skills.game">Разработка игр</span>
+                                <span class="skills__percent">79%</span>
+                            </div>
+                            <div class="skills__bar">
+                                <div class="skills__bar-fill" style="width: 79%;"></div>
+                            </div>
+                            <div class="skills__stack user-select-none">
+                                <span class="tag tag--small">C#</span>
+                                <span class="tag tag--small">Unity</span>
+                                <span class="tag tag--small">Phaser.JS</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills__learning user-select-none">
+                        <h4 class="skills__subtitle" data-i18n="skills.learning">Сейчас в изучении</h4>
+                        <div class="skills__tags">
+                            <span class="tag tag--learning">TypeScript</span>
+                            <span class="tag tag--learning">React</span>
+                            <span class="tag tag--learning">Node.js</span>
+                            <span class="tag tag--learning">Next.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<!-- ========== ЧТО Я УМЕЮ ========== -->
+<section class="capabilities">
+    <div class="container">
+        <h2 class="section-title" data-i18n="cap.title">Что я умею</h2>
+        <p class="section-subtitle" data-i18n="cap.subtitle">Кроме кода</p>
+        
+        <div class="capabilities__grid">
+            <!-- Карточка 1: Работа с заказчиками -->
+            <div class="capability-card">
+                <h3 class="capability-card__title" data-i18n="cap.clients.title">Работа с заказчиками</h3>
+                <p class="capability-card__description" data-i18n="cap.clients.desc">
+                    Общаюсь напрямую с заказчиками (включая иностранных), обсуждаю детали проектов, зоны риска и перспективы.
+                </p>
+                <div class="capability-card__tags user-select-none">
+                    <span class="tag tag--small">B2B</span>
+                    <span class="tag tag--small" data-i18n="cap.clients.tag1">Иностранные заказчики</span>
+                </div>
+            </div>
+            
+            <!-- Карточка 2: Влияние на процессы -->
+            <div class="capability-card">
+                <h3 class="capability-card__title" data-i18n="cap.process.title">Влияние на процессы</h3>
+                <p class="capability-card__description" data-i18n="cap.process.desc">
+                    Предлагаю и внедряю способы оптимизации работы: новые технологии, инструменты, подходы.
+                </p>
+                <div class="capability-card__tags user-select-none">
+                    <span class="tag tag--small" data-i18n="cap.process.tag1">Тех. внедрения</span>
+                    <span class="tag tag--small" data-i18n="cap.process.tag2">Оптимизация</span>
+                </div>
+            </div>
+            
+            <!-- Карточка 3: Командная работа -->
+            <div class="capability-card">
+                <h3 class="capability-card__title" data-i18n="cap.team.title">Командная работа</h3>
+                <p class="capability-card__description" data-i18n="cap.team.desc">
+                    Работаю в связке с дизайнерами, 3D-специалистами и разработчиками. Общаюсь с нетехническими специалистами.
+                </p>
+                <div class="capability-card__tags user-select-none">
+                    <span class="tag tag--small" data-i18n="cap.team.tag1">Кросс-функциональность</span>
+                    <span class="tag tag--small" data-i18n="cap.team.tag2">Коммуникация</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- ========== ЧТО Я МОГУ ПРЕДЛОЖИТЬ ========== -->
+<section class="services section-gradient">
+    <div class="container">
+        <h2 class="section-title" data-i18n="services.title">Что я могу предложить</h2>
+        <p class="section-subtitle" data-i18n="services.subtitle">Услуги, которые я предоставляю</p>
+        
+        <div class="services__grid">
+            <!-- Левая колонка: список услуг -->
+            <div class="services__list">
+                <div class="service-item">
+                    <div class="service-item__content">
+                        <h3 class="service-item__title" data-i18n="services.sites.title">Разработка сайтов</h3>
+                        <p class="service-item__description" data-i18n="services.sites.desc">...</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-item__content">
+                        <h3 class="service-item__title" data-i18n="services.games.title">Разработка игр</h3>
+                        <p class="service-item__description" data-i18n="services.games.desc">...</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-item__content">
+                        <h3 class="service-item__title" data-i18n="services.apps.title">Разработка приложений</h3>
+                        <p class="service-item__description" data-i18n="services.apps.desc">...</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-item__content">
+                        <h3 class="service-item__title" data-i18n="services.bots.title">Разработка ботов</h3>
+                        <p class="service-item__description" data-i18n="services.bots.desc">...</p>
+                    </div>
+                </div>
+                
+                <div class="services__action user-select-none">
+                    <a href="#contacts" class="btn btn--primary" data-i18n="services.cta">Обсудить проект</a>
+                </div>
+                
+            </div>
+            
+            <!-- Правая колонка: инфографика -->
+            <div class="services__visual user-select-none">
+                <div class="services__visual-card">
+                    <div class="services__visual-icon">🚀</div>
+                    <p class="services__visual-text" data-i18n="services.visual">От идеи до релиза</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- ========== ПРОЕКТЫ ========== -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-i18n="projects.title">Мои проекты</h2>
+            <p class="section-subtitle" data-i18n="projects.subtitle">Несколько работ, которыми я горжусь</p>
+            
+            <div class="projects__grid">
+                <!-- Epic Football -->
+                <article class="project-card" data-project="epic-football">
+                    <div class="project-card__image">
+                        <img src="resources/projects/EpicFootball_Cover.png" alt="Epic Football" loading="lazy" decoding="async"/>
+                        <span class="project-card__status status--completed" data-i18n="projects.status.completed">Завершён</span>
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">Epic Football</h3>
+                        <p class="project-card__description" data-i18n="projects.epic.desc">...</p>
+                        <div class="project-card__tags user-select-none">
+                            <span class="tag">Unity</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">WebGL</span>
+                        </div>
+                        <a href="#" class="project-card__more user-select-none" data-modal="epic-football" data-i18n="projects.readmore">Подробнее</a>
+                    </div>
+                </article>
+                
+                <!-- PM Website -->
+                <article class="project-card" data-project="pm-website">
+                    <div class="project-card__image">
+                        <img src="resources/projects/PM.png" alt="PM Website" loading="lazy" decoding="async"/>
+                        <span class="project-card__status status--completed" data-i18n="projects.status.completed">Завершён</span>
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title" data-i18n="projects.pm.title">Сайт-визитка PM</h3>
+                        <p class="project-card__description" data-i18n="projects.pm.desc">...</p>
+                        <div class="project-card__tags user-select-none">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <a href="#" class="project-card__more user-select-none" data-modal="pm-website" data-i18n="projects.readmore">Подробнее</a>
+                    </div>
+                </article>
+                
+                <!-- SkinUp 2D -->
+                <article class="project-card" data-project="skinup-2d">
+                    <div class="project-card__image">
+                        <img src="resources/projects/SkinUp2D.png" alt="SkinUp 2D" loading="lazy" decoding="async"/>
+                        <span class="project-card__status status--pet-project" data-i18n="projects.status.pet">Пет-проект</span>
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">SkinUp 2D</h3>
+                        <p class="project-card__description" data-i18n="projects.skinup.desc">...</p>
+                        <div class="project-card__tags user-select-none">
+                            <span class="tag">C#</span>
+                            <span class="tag">Windows Forms</span>
+                            <span class="tag">.NET</span>
+                        </div>
+                        <a href="#" class="project-card__more user-select-none" data-modal="skinup-2d" data-i18n="projects.readmore">Подробнее</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== КОНТАКТЫ ========== -->
+<section id="contacts" class="contacts section-gradient">
+    <div class="container contacts__inner">
+        <h2 class="section-title" data-i18n="contacts.title">Связаться со мной</h2>
+        <p class="section-subtitle" data-i18n="contacts.subtitle">Всегда рад новым знакомствам и предложениям</p>
+        
+        <div class="contacts__list user-select-none">
+            <a href="https://t.me/cosyplaid" target="_blank" rel="noopener noreferrer" class="contacts__link contacts__link--primary">Telegram</a>
+            <a href="#" data-modal="email" data-i18n="contacts.email" class="contacts__link contacts__link--primary">Email</a>
+            <a href="https://github.com/cosyplaid" target="_blank" rel="noopener noreferrer" class="contacts__link contacts__link--secondary">GitHub</a>
+        </div>
+    </div>
+</section>
+    
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+    <div class="container">
+        <p data-i18n="footer.copy">© 2026 Валентин Сенин. Ваш проводник в мир технологий...</p>
+    </div>
+</footer>
+
+    <!-- ====== МОДАЛЬНЫЕ ОКНА ====== -->
+    
+    <!-- Epic Football Modal -->
+    <div class="modal-overlay" id="modal-epic-football">
+        <div class="modal"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="modal-epic-football-title">
+            <button class="modal__close" aria-label="Закрыть">✕</button>
+            <div class="modal__scroll">
+                <div class="modal__image">
+                    <img src="resources/projects/EpicFootball_Cover.png" alt="Epic Football" loading="lazy" decoding="async"/>
+                </div>
+                <div class="modal__body">
+                    <h2 class="modal__title" id="modal-epic-football-title">Epic Football</h2>
+                    <div class="modal__meta">
+                        <span class="modal__status status--completed" data-i18n="projects.status.completed">Завершён</span>
+                        <span class="modal__year">2025</span>
+                    </div>
+                    <div class="modal__description">
+                        <p data-i18n="modal.epic.desc"><strong>Epic Football</strong> — ...</p>
+                        <p><strong data-i18n="modal.features">Особенности:</strong></p>
+                        <ul>
+                            <li data-i18n="modal.epic.f1">Интегрированный магазин скинов</li>
+                            <li data-i18n="modal.epic.f2">Различные игровые режимы</li>
+                            <li data-i18n="modal.epic.f3">Кроссплатформенность (WebGL + ПК)</li>
+                        </ul>
+                        <p><strong data-i18n="modal.contribution">Мой вклад:</strong> 
+                            <span data-i18n="modal.epic.contribution">полный цикл разработки.</span></p>
+                    </div>
+                    <div class="modal__gallery user-select-none">
+                        <img src="resources/projects/EpicFootball_Screen_Eng_1.png" alt="Epic Football" loading="lazy" decoding="async"/>
+                        <img src="resources/projects/EpicFootball_Screen_Eng_2.png" alt="Epic Football" loading="lazy" decoding="async"/>
+                        <img src="resources/projects/EpicFootball_Screen_Eng_3.png" alt="Epic Football" loading="lazy" decoding="async"/>
+                        <img src="resources/projects/EpicFootball_Screen_Eng_4.png" alt="Epic Football" loading="lazy" decoding="async"/>
+                    </div>
+                    <div class="modal__tags user-select-none">
+                        <span class="tag">Unity</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">WebGL</span>
+                        <span class="tag">Rustore</span>
+                    </div>
+                    <div class="modal__links user-select-none">
+                        <a href="https://www.rustore.ru/catalog/app/com.ConiferousGames.EpicFootball" class="modal__link modal__link--active" target="_blank">Rustore</a>
+                        <a href="https://yandex.ru/games/app/433899" class="modal__link modal__link--active" target="_blank">
+                            <span data-i18n="modal.yaGames">Яндекс Игры</span>
+                        </a>     
+                        <span class="modal__link modal__link--inactive">
+                            <span data-i18n="modal.vkGames">VK Games — скоро</span>
+                        </span>
+                        <span class="modal__link modal__link--inactive">
+                            <span data-i18n="modal.crazyGames">Crazy Games — скоро</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PM Website Modal -->
+    <div class="modal-overlay" id="modal-pm-website">
+        <div class="modal"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="modal-pm-website-title">
+            <button class="modal__close" aria-label="Закрыть">✕</button>
+            <div class="modal__scroll">
+                <div class="modal__image">
+                    <img src="resources/projects/PM.png" alt="PM Website" loading="lazy" decoding="async"/>
+                </div>
+                <div class="modal__body">
+                    <h2 class="modal__title" id="modal-pm-website-title" data-i18n="modal.pm.title">Сайт-визитка PM</h2>
+                    <div class="modal__meta">
+                        <span class="modal__status status--completed" data-i18n="projects.status.completed">Завершён</span>
+                        <span class="modal__year">2025</span>
+                    </div>
+                    <div class="modal__description">
+                        <p data-i18n="modal.pm.desc"><strong>Сайт-визитка для проджект-менеджера</strong> — минималистичный лендинг.</p>
+                        <p><strong data-i18n="modal.features">Особенности:</strong></p>
+                        <ul>
+                            <li data-i18n="modal.pm.f1">Адаптивная вёрстка</li>
+                            <li data-i18n="modal.pm.f2">Интеграция с Telegram и LinkedIn</li>
+                            <li data-i18n="modal.pm.f3">SEO-дружественная структура</li>
+                        </ul>
+                        <p>
+                            <strong data-i18n="modal.contribution">Мой вклад:</strong>
+                            <span data-i18n="modal.pm.contribution">полный цикл разработки.</span>
+                        </p>
+                    </div>
+                    <div class="modal__tags user-select-none">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag" data-i18n="modal.pm.responsive">Адаптив</span>
+                    </div>
+                    <div class="modal__links user-select-none">
+                        <a href="https://c638cdf0-6b71-4ee4-8f39-f2ee18307a46.selstorage.ru/index.html"
+                           class="modal__link modal__link--active"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           data-i18n="modal.pm.view">Посмотреть сайт</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SkinUp 2D Modal -->
+    <div class="modal-overlay" id="modal-skinup-2d">
+        <div class="modal"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="modal-skinup-2d-title">
+            <button class="modal__close" aria-label="Закрыть">✕</button>
+            <div class="modal__scroll">
+                <div class="modal__image">
+                    <img src="resources/projects/SkinUp2D.png" alt="SkinUp 2D" loading="lazy" decoding="async"/>
+                </div>
+                <div class="modal__body">
+                    <h2 class="modal__title" id="modal-skinup-2d-title">SkinUp 2D</h2>
+                    <div class="modal__meta">
+                        <span class="modal__status status--pet-project" data-i18n="projects.status.pet">Пет-проект</span>
+                        <span class="modal__year">2025</span>
+                    </div>
+                    <div class="modal__description">
+                        <p data-i18n="modal.skinup.desc">
+                            <strong>SkinUp 2D</strong> — легковесный 2D редактор-визуализатор на Windows Forms для проверки скинов без Unity.
+                        </p>
+                        <p>
+                            <strong data-i18n="modal.result">Результат:</strong>
+                            <span data-i18n="modal.skinup.result">экономия ≈50% времени</span>
+                        </p>
+                    </div>
+                    <div class="modal__tags user-select-none">
+                        <span class="tag">C#</span>
+                        <span class="tag">Windows Forms</span>
+                        <span class="tag">.NET</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Email Modal -->
+    <div class="modal-overlay" id="modal-email">
+        <div class="modal"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="modal-email-title">
+            <button class="modal__close" aria-label="Закрыть">✕</button>
+            <div class="modal__scroll">
+                <div class="modal__body">
+                    <h2 class="modal__title" id="modal-email-title">Email</h2>
+
+                    <div class="email-copy">
+                        <input type="email"
+                               class="email-copy__field"
+                               value="cosyplaid@gmail.com"
+                               readonly
+                               aria-label="Email address" />
+                        <button type="button"
+                                class="email-copy__button"
+                                data-copy="cosyplaid@gmail.com"
+                                aria-label="Скопировать email">
+                            <svg class="email-copy__icon email-copy__icon--copy" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+                            </svg>
+                            <svg class="email-copy__icon email-copy__icon--check" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M20 6 9 17l-5-5"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="email-copy__message user-select-none" role="status" aria-live="polite">Copied to clipboard</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Убираем якорь из URL при загрузке, чтобы страница открывалась сверху
+        if (window.location.hash) {
+            history.replaceState(null, null, window.location.pathname);
+        }
+    </script>
+    
+</body>
+</html>
