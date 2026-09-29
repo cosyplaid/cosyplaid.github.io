@@ -589,7 +589,7 @@ ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-inline: 40px;
+    margin-inline: 10%;
     gap: 12px;
     margin-top: 12px;
     padding-top: 24px;
