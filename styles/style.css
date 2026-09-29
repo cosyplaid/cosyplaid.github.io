@@ -48,8 +48,8 @@
     /* Фоны — глубокие, космические */
     --bg-primary: #111827;              /* Pantone 5395 C — Almost Black */
     --bg-secondary: #070B14;            /* Pantone 433 C — Deep Charcoal */
-    --bg-card: rgba(17, 24, 39, 0.7);   /* Pantone 2766 C — Space Blue */
-    --bg-card-hover: rgba(30, 41, 59, 0.9); /* Pantone 2768 C — Nebula */
+    --bg-card: #111827;   /* Pantone 2766 C — Space Blue */
+    --bg-card-hover: #1e293b; /* Pantone 2768 C — Nebula */
 
     /* Текст — холодный белый */
     --text-primary: #E2E8F0;            /* Pantone 656 C — Ice White */
@@ -142,10 +142,10 @@ ul {
 .toggle-slider {
     position: absolute;
     inset: 0;
-    background: #555555;
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 50px;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .toggle-slider::before {
@@ -153,29 +153,47 @@ ul {
     position: absolute;
     height: 22px;
     width: 22px;
-    left: 4px;
-    bottom: 4px;
-    background: #ffffff;
+    left: 3px;
+    bottom: 3px;
+    background: #F5F0E8;
     border-radius: 50%;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .toggle-switch input:checked + .toggle-slider {
-    background: #22c55e;
+    background: #5C4A3A;
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .toggle-switch input:checked + .toggle-slider::before {
+    background: #e8dfd0;
     transform: translateX(26px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Hover тумблера — оставляем везде (навигационный элемент) */
+/*
 .toggle-switch:hover .toggle-slider {
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 0 4px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.06);
 }
 
 .toggle-switch input:checked:hover + .toggle-slider {
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 0 0 4px rgba(34, 197, 94, 0.15);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.08);
+}
+*/
+
+[data-theme="dark"] .toggle-switch:hover .toggle-slider,
+[data-theme="dark"] .toggle-switch input:checked:hover + .toggle-slider {
+    box-shadow: 0 0 0 0.2px rgba(59, 130, 246, 0.25), 0 0 8px 2px rgba(59, 130, 246, 0.35);
+}
+
+/* Hover — светлая тема (мягкая тень) */
+[data-theme="light"] .toggle-switch:hover .toggle-slider,
+[data-theme="light"] .toggle-switch input:checked:hover + .toggle-slider {
+    box-shadow: 
+        0 0 0 0.2px rgba(0, 0, 0, 0.4),
+        0 0 8px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* ========================================
@@ -410,7 +428,6 @@ ul {
     font-size: 3.5rem;
     font-weight: 800;
     letter-spacing: -0.03em;
-    margin-bottom: 12px;
     color: #ffffff;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
@@ -419,10 +436,18 @@ ul {
     color: #3B82F6;
 }
 
+.hero__role {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 20px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
 .hero__subtitle {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.85);
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
@@ -548,15 +573,27 @@ ul {
     margin-bottom: 16px;
 }
 
-.about__location {
-    margin-top: 8px;
+.about__title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.about__title-row p {
+    margin-bottom: 0;
 }
 
 .about__actions {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-inline: 40px;
     gap: 12px;
-    margin-top: 24px;
+    margin-top: 12px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
 }
 
 /* ========================================
@@ -644,7 +681,8 @@ ul {
 }
 
 .skills__learning {
-    margin-top: 32px;
+    justify-items: center;
+    margin-top: 12px;
     padding-top: 24px;
     border-top: 1px solid var(--border-color);
 }
@@ -1420,6 +1458,11 @@ ul {
 }
 
 @media (max-width: 640px) {
+    
+    .footer {
+        padding-bottom: 80px;
+    }
+    
     .header__back span {
         display: inline;
     }
@@ -1491,7 +1534,7 @@ ul {
     }
 
     .hero__subtitle {
-        font-size: 1rem;
+        font-size: .95rem;
     }
 
     .contacts__list {
@@ -1509,12 +1552,13 @@ ul {
         bottom: 16px;
         right: 16px;
         padding: 6px;
+        z-index: 999;
     }
 
     .tech-stack__wrapper {
         padding: 105px 0 10px;
     }
-
+    
     .capabilities__grid {
         grid-template-columns: 1fr;
         max-width: 400px;

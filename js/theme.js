@@ -12,17 +12,27 @@ window.App.theme = (function() {
 
         const htmlElement = document.documentElement;
 
-        // Синхронизируем чекбокс с текущей темой.
-        // Сама тема уже установлена инлайн-скриптом в <head>.
+        // Синхронизируем чекбокс с текущей темой
         toggle.checked = htmlElement.getAttribute('data-theme') === 'light';
 
-        toggle.addEventListener('change', (e) => {
-            const theme = e.target.checked ? 'light' : 'dark';
+        // Ручное переключение
+        toggle.addEventListener('change', function() {
+            const theme = this.checked ? 'light' : 'dark';
             htmlElement.setAttribute('data-theme', theme);
             localStorage.setItem('theme', theme);
+        });
+
+        // Реакция на смену системной темы (если пользователь не выбирал)
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+        mediaQuery.addEventListener('change', (e) => {
+            // Если пользователь уже сделал выбор — не трогаем
+            if (localStorage.getItem('theme')) return;
+
+            const theme = e.matches ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', theme);
+            toggle.checked = theme === 'light';
         });
     }
 
     return { init };
 })();
-

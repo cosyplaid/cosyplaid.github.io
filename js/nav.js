@@ -83,11 +83,25 @@ window.App.nav = (function() {
     }
 
     // ----------------------------------------
+    // Скролл наверх по клику на логотип
+    // ----------------------------------------
+    function initLogoScroll() {
+        const logo = document.querySelector('.top-logo');
+        if (!logo) return;
+
+        logo.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+    
+    // ----------------------------------------
     // Точка входа
     // ----------------------------------------
     function init() {
         initBurger();
         initActiveSection();
+        initLogoScroll();
     }
 
     return { init };

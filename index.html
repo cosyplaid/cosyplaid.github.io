@@ -57,15 +57,25 @@
     <script src="js/main.js" defer></script>
     
     <script>
-        // Тема из localStorage — синхронно, без defer, чтобы избежать FOUC
+        // Тема: localStorage → системная → dark (fallback)
+        // Синхронно, без defer, чтобы избежать FOUC
         (function() {
             const saved = localStorage.getItem('theme');
-            const theme = saved === 'light' ? 'light' : 'dark';
+            let theme;
+
+            if (saved === 'light' || saved === 'dark') {
+                theme = saved;
+            } else {
+                const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                theme = prefersLight ? 'light' : 'dark';
+                // НЕ пишем в localStorage — чтобы тема продолжала следовать за системной
+            }
+
             document.documentElement.setAttribute('data-theme', theme);
         })();
     </script>
 </head>
-<body>
+<body id="top">
 
     <!-- ========== ПЕРЕКЛЮЧАТЕЛЬ ТЕМ ========== -->
     <div class="theme-switcher">
@@ -78,7 +88,7 @@
     <!-- ========== ШАПКА ========== -->
 <header class="header user-select-none">
     <div class="container header__inner">
-        <a href="index.html" class="logo">
+        <a href="#" class="logo top-logo">
             <span data-i18n="logo.name">Валентин Сенин</span>
         </a>
         
@@ -101,10 +111,7 @@
                 <li class="nav__divider-mobile" aria-hidden="true"></li>
 
                 <li class="nav__item">
-                    <a href="resume.html"
-                        class="nav__link nav__link--external"
-                        target="_blank"
-                        rel="noopener noreferrer">
+                    <a href="resume.html" class="nav__link nav__link--external">
                         <span data-i18n="nav.resume">Резюме</span>
                     </a>
                 </li>
@@ -133,13 +140,14 @@
         <div class="hero__image-wrapper">
             <div class="hero__image">
                 <img src="resources/bg.jpg" alt="Валентин Сенин" fetchpriority="high" decoding="async" />
-            </div>
+            </div>          
             <div class="hero__content">
                 <h1 class="hero__title" data-i18n="hero.title">
                     Привет, я <span class="hero__title-accent">Валентин</span>
                 </h1>
+                <p class="hero__role" data-i18n="hero.role">Unity / Fullstack Developer</p>
                 <p class="hero__subtitle" data-i18n="hero.subtitle">
-                    Создаю игры и веб-приложения, которые решают задачи
+                    Создаю игры, сайты, веб-приложения и ботов
                 </p>
             </div>
         </div>
@@ -204,18 +212,16 @@
             <h2 class="section-title" data-i18n="about.title">Обо мне</h2>
             
             <div class="about__grid">
-                <div class="about__content">
-                    <p data-i18n="about.p1"><strong>Unity и C# разработчик...</strong> ...</p>
-                    <p data-i18n="about.p2">В работе придерживаюсь принципов...</p>
-                    <p data-i18n="about.p3"><strong>Сейчас активно развиваюсь...</strong></p>
-                    
-                    <span class="about__location tag user-select-none" data-i18n="about.location">Тюмень, Россия</span>
-                    
-                    <div class="about__actions user-select-none">
-                        <a href="resume.html" class="btn btn--secondary">
-                            <span data-i18n="about.resume">Моё резюме</span>
-                        </a>
+                <div class="about__content"> 
+                    <div class="about__title-row">
+                        <div class="tag user-select-none">
+                            <span data-i18n="about.location">Тюмень, Россия</span>
+                        </div>
+                        <p data-i18n="about.p1" class="about__title"><strong>Unity и C# разработчик, fullstack.</strong></p>
                     </div>
+                    <p data-i18n="about.p2">Разрабатываю сайты и веб-приложения (лендинги, корпоративные сайты, CRM), кроссплатформенные игры (ПК, мобильные, WebGL, XR) и ботов. Есть опыт работы в веб-студии, в команде и соло. Победа в гейм-джеме среди 81 проекта.</p>
+                    <p data-i18n="about.p3">Разберёмся в задаче вместе. В работе для меня важно, чтобы обе стороны были услышаны: ваши цели, потребности и ограничения — мои предложения, решения задачи и аргументы.</p>
+                    <p data-i18n="about.p4">Если вижу слабое место — скажу заранее. Если вижу более удачное решение — предложу. В конечном итоге мы вместе придём к ожидаемому результату.</p>
                 </div>
                 
                 <div class="skills">
@@ -261,6 +267,12 @@
                             <span class="tag tag--learning">Node.js</span>
                             <span class="tag tag--learning">Next.js</span>
                         </div>
+                    </div>
+                    
+                    <div class="about__actions user-select-none">
+                        <a href="resume.html" class="btn btn--secondary">
+                            <span data-i18n="about.resume">Моё резюме</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -630,13 +642,6 @@
             </div>
         </div>
     </div>
-    
-    <script>
-        // Убираем якорь из URL при загрузке, чтобы страница открывалась сверху
-        if (window.location.hash) {
-            history.replaceState(null, null, window.location.pathname);
-        }
-    </script>
     
 </body>
 </html>

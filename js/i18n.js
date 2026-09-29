@@ -12,17 +12,19 @@ const translations = {
         'nav.projects': 'Проекты',
         'nav.contacts': 'Контакты',
         'nav.resume': 'Резюме',
-        'logo.name': 'Валентин Сенин',
+        'logo.name': 'Cosyplaid',
 
         // Hero
         'hero.title': 'Привет, я <span class="hero__title-accent">Валентин</span>',
-        'hero.subtitle': 'Создаю игры и веб-приложения, которые решают задачи',
+        'hero.role': 'Unity / Fullstack Developer',
+        'hero.subtitle': 'Создаю сайты, игры, ботов и веб-приложения — от задумки до результата',
 
         // About
         'about.title': 'Обо мне',
-        'about.p1': '<strong>Unity и C# разработчик с опытом более трёх лет.</strong> Создаю игры и интерактивные приложения, а также веб-проекты.',
-        'about.p2': 'В работе придерживаюсь принципов ООП, SOLID и паттернов проектирования. Умею быстро разбираться в чужом коде и эффективно взаимодействовать с командой.',
-        'about.p3': '<strong>Сейчас активно развиваюсь как Fullstack-разработчик</strong> (PHP, JavaScript, React, Node.js), но остаюсь открытым для проектов в Unity.',
+        'about.p1': '<strong>Unity и C# разработчик, fullstack.</strong>',
+        'about.p2': 'Разрабатываю сайты и веб-приложения (лендинги, корпоративные сайты, CRM), кроссплатформенные игры (ПК, мобильные, WebGL, XR) и ботов. Есть опыт работы в веб-студии, в команде и соло. Победа в гейм-джеме среди 81 проекта.',
+        'about.p3': 'Разберёмся в задаче вместе. В работе для меня важно, чтобы обе стороны были услышаны: ваши цели, потребности и ограничения — мои предложения, решения задачи и аргументы.',
+        'about.p4': 'Если вижу слабое место — скажу заранее. Если вижу более удачное решение — предложу. В конечном итоге мы вместе придём к ожидаемому результату.',
         'about.location': 'Тюмень, Россия',
         'about.resume': 'Моё резюме',
 
@@ -191,17 +193,19 @@ const translations = {
         'nav.projects': 'Projects',
         'nav.contacts': 'Contacts',
         'nav.resume': 'Resume',
-        'logo.name': 'Valentin Senin',
+        'logo.name': 'Cosyplaid',
 
         // Hero
         'hero.title': 'Hi, I\'m <span class="hero__title-accent">Valentin</span>',
-        'hero.subtitle': 'Building games &amp; web apps that solve problems',
+        'hero.role': 'Unity / Fullstack Developer',
+        'hero.subtitle': 'Building websites, games, bots &amp; web apps — from concept to result',
 
         // About
         'about.title': 'About Me',
-        'about.p1': '<strong>Unity &amp; C# developer with 3+ years of experience.</strong> Building games, interactive apps, and web projects.',
-        'about.p2': 'I follow OOP, SOLID, and design patterns. Quick at understanding others\' code and effective in team collaboration.',
-        'about.p3': '<strong>Currently growing as a Fullstack developer</strong> (PHP, JavaScript, React, Node.js), while remaining open to Unity projects.',
+        'about.p1': '<strong>Unity &amp; C# developer, fullstack.</strong>',
+        'about.p2': 'I develop websites and web apps (landing pages, corporate sites, CRM), cross-platform games (PC, mobile, WebGL, XR) and bots. I have experience in a web studio, in teams and solo. Winner of a game jam among 81 projects.',
+        'about.p3': 'Let\'s figure out the task together. In my work it matters that both sides are heard: your goals, needs and constraints — my proposals, solutions and reasoning.',
+        'about.p4': 'If I see a weak spot, I\'ll say it upfront. If I see a better solution, I\'ll suggest it. In the end, we\'ll reach the result you expect.',
         'about.location': 'Tyumen, Russia',
         'about.resume': 'My Resume',
 
