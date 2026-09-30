@@ -21,10 +21,10 @@ const translations = {
 
         // About
         'about.title': 'Обо мне',
-        'about.p1': '<strong>Unity и C# разработчик, fullstack.</strong>',
-        'about.p2': 'Разрабатываю сайты и веб-приложения (лендинги, корпоративные сайты, CRM), кроссплатформенные игры (ПК, мобильные, WebGL, XR) и ботов. Есть опыт работы в веб-студии, в команде и соло. Победа в гейм-джеме среди 81 проекта.',
-        'about.p3': 'Разберёмся в задаче вместе. В работе для меня важно, чтобы обе стороны были услышаны: ваши цели, потребности и ограничения — мои предложения, решения задачи и аргументы.',
-        'about.p4': 'Если вижу слабое место — скажу заранее. Если вижу более удачное решение — предложу. В конечном итоге мы вместе придём к ожидаемому результату.',
+        'about.p1': '<strong>Unity / Fullstack разработчик</strong>',
+        'about.p2': 'Разрабатываю сайты и веб-приложения (лендинги, корпоративные сайты, CRM), кроссплатформенные игры (ПК, мобильные, WebGL, XR), ботов и другое ПО. Победитель гейм-джема среди 81 проекта.',
+        'about.p3': 'Если у вас есть задача в IT — обращайтесь. В работе для меня важно, чтобы обе стороны были услышаны: ваши цели, потребности и ограничения — мои предложения, решения задачи и аргументы.',
+        'about.p4': 'Вижу слабые места и риски — скажу заранее. Вижу более удачное решение — предложу. В конечном итоге мы вместе придём к ожидаемому результату.',
         'about.location': 'Тюмень, Россия',
         'about.resume': 'Моё резюме',
 
@@ -76,6 +76,8 @@ const translations = {
         // Contacts
         'contacts.title': 'Связаться со мной',
         'contacts.subtitle': 'Всегда рад новым знакомствам и предложениям',
+        'contacts.vkMessenger': 'ВКонтакте',
+        'contacts.other': 'Прочие контакты',
 
         // Footer
         'footer.copy': '© 2026 Валентин Сенин. Ваш проводник в мир технологий...',
@@ -202,10 +204,10 @@ const translations = {
 
         // About
         'about.title': 'About Me',
-        'about.p1': '<strong>Unity &amp; C# developer, fullstack.</strong>',
-        'about.p2': 'I develop websites and web apps (landing pages, corporate sites, CRM), cross-platform games (PC, mobile, WebGL, XR) and bots. I have experience in a web studio, in teams and solo. Winner of a game jam among 81 projects.',
-        'about.p3': 'Let\'s figure out the task together. In my work it matters that both sides are heard: your goals, needs and constraints — my proposals, solutions and reasoning.',
-        'about.p4': 'If I see a weak spot, I\'ll say it upfront. If I see a better solution, I\'ll suggest it. In the end, we\'ll reach the result you expect.',
+        'about.p1': '<strong>Unity / Fullstack developer</strong>',
+        'about.p2': 'I develop websites and web apps (landing pages, corporate sites, CRM), cross-platform games (PC, mobile, WebGL, XR), bots and other software. Winner of a game jam among 81 projects.',
+        'about.p3': 'If you have a task in IT — reach out. It matters to me that both sides are heard: your goals, needs and constraints — my proposals, solutions and reasoning.',
+        'about.p4': 'I see weak spots and risks — I\'ll flag them upfront. I see a better solution — I\'ll suggest it. In the end, we\'ll get to the result you expect.',
         'about.location': 'Tyumen, Russia',
         'about.resume': 'My Resume',
 
@@ -257,7 +259,9 @@ const translations = {
         // Contacts
         'contacts.title': 'Contact Me',
         'contacts.subtitle': 'Always open to new connections and opportunities',
-
+        'contacts.vkMessenger': 'VKontakte',
+        'contacts.other': 'Other contacts',
+        
         // Footer
         'footer.copy': '© 2026 Valentin Senin. Your guide to technology...',
 

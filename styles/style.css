@@ -204,11 +204,13 @@ ul {
     top: 0;
     left: 0;
     width: 100%;
-    background: #0F0F11;
+    background: 
+        linear-gradient(90deg, #0a0a0a 0%, transparent 50%),
+        linear-gradient(270deg, #0a0a0a 0%, transparent 50%),
+        #0F0F0F;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 1000;
     padding: 16px 0;
-    transition: border-color 0.4s;
 }
 
 .header__inner {
@@ -955,6 +957,28 @@ ul {
     color: var(--text-secondary);
 }
 
+/*Разделитель контактов*/
+.contacts__divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 26px 0 26px;
+    color: var(--text-muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.contacts__divider::before,
+.contacts__divider::after {
+    content: '';
+    flex: 1;
+    max-width: 120px;
+    height: 1px;
+    background: var(--border-color);
+}
+
 .footer {
     padding: 32px 0;
     background: var(--bg-secondary);
@@ -1405,6 +1429,9 @@ ul {
 }
 
 @media (max-width: 768px) {
+    .header {
+        background: #0a0a0a ;
+    }
     .about__grid {
         grid-template-columns: 1fr;
         gap: 32px;
