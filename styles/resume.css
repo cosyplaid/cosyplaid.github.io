@@ -36,7 +36,7 @@
 .resume {
     background: var(--resume-bg-card);
     border-radius: var(--radius-lg);
-    padding: 48px 40px;
+    padding: 40px 40px;
     border: 1px solid var(--resume-border);
     box-shadow: var(--resume-shadow);
 }
@@ -51,6 +51,11 @@
     margin-bottom: 24px;
     padding-bottom: 24px;
     border-bottom: 2px solid var(--resume-border);
+    align-items: center;
+}
+
+.resume__identity {
+    min-width: 0;            /* чтобы длинный текст корректно сжимался */
 }
 
 .resume__name {
@@ -72,6 +77,70 @@
     flex-wrap: wrap;
     align-items: center;
     flex-shrink: 0;
+}
+
+/* ==== Строка специальностей ==== */
+
+.resume__role-part {
+    color: var(--resume-text-muted);
+    transition: color .18s ease, font-weight .18s ease;
+}
+
+.resume__role-part.active {
+    color: var(--resume-text-primary);
+    font-weight: 600;
+    
+    text-decoration: underline;
+    text-decoration-color: var(--resume-accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+    text-decoration-skip-ink: auto;  /* не перечёркивает хвостики букв y, g, p */
+}
+
+.resume__role-sep,
+.resume__role-suffix {
+    color: var(--resume-text-secondary);
+}
+
+/* тогглы  */
+.resume__tabs {
+    display: flex;
+    gap: 4px;
+    background: var(--resume-bg-light);
+    padding: 4px;
+    border-radius: 100px;
+    margin-right: 12px;
+}
+
+.resume__tab {
+    padding: 8px 20px;
+    border-radius: 100px;
+    border: none;
+    background: transparent;
+    color: var(--resume-text-secondary);
+    font-family: var(--font-family);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.resume__tab:hover {
+    color: var(--resume-text-primary);
+}
+
+.resume__tab.active {
+    background: var(--resume-bg-card);
+    color: var(--resume-text-primary);
+    box-shadow: 0 2px 8px rgba(44, 36, 24, 0.08);
+}
+
+.resume__content {
+    display: none;
+}
+
+.resume__content.active {
+    display: block;
 }
 
 /* Кнопки резюме — только переопределение цветов.
@@ -276,6 +345,19 @@
 /* ========================================
    АДАПТИВ
    ======================================== */
+@media (max-width: 864px)
+{
+    .resume__header {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .resume__identity {
+        text-align: center;
+    }
+}
+
+
 @media (max-width: 768px) {
     .resume-page {
         padding: 80px 0 40px;
@@ -283,11 +365,6 @@
 
     .resume {
         padding: 32px 20px;
-    }
-
-    .resume__header {
-        flex-direction: column;
-        gap: 16px;
     }
 
     .resume__grid {
@@ -298,18 +375,24 @@
     .resume__name {
         font-size: 2rem;
     }
-
-    .resume__actions {
-        width: 100%;
-    }
-
-    .resume__actions .btn {
-        flex: 1;
-        text-align: center;
-    }
 }
 
 @media (max-width: 640px) {
+    .resume__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .resume__tabs {
+        margin-right: 0;
+        justify-content: center;
+    }
+
+    .resume__tab {
+        flex: 1;
+        text-align: center;
+    }
+    
     .resume__item-header {
         flex-direction: column;
         gap: 4px;
@@ -317,6 +400,15 @@
 
     .resume__item-date {
         font-size: 0.8rem;
+    }
+    
+    .resume__actions {
+        width: 100%;
+    }
+
+    .resume__actions .btn {
+        flex: 1;
+        text-align: center;
     }
 }
 

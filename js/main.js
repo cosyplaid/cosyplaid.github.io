@@ -19,7 +19,10 @@
 
         // Модалки — на страницах, где они есть
         if (window.App?.modal) window.App.modal.init();
-
+        
+        // Switch для резюме
+        if (window.App?.resume) window.App.resume.init(); 
+        
         // i18n инициализируется сам через свой DOMContentLoaded
     });
 })();

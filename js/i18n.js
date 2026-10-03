@@ -117,13 +117,21 @@ const translations = {
         'resume.back': 'На главную',
         'resume.pageTitle': 'Резюме',
         'resume.name': 'Валентин Сенин',
+        "resume.variantPrefix": "Резюме",
         'resume.role': 'Unity / Fullstack-разработчик',
         'resume.downloadPdf': 'Скачать PDF',
-
+        
         // Summary
-        'resume.summary.p1': '<strong>Unity и C# разработчик с опытом более трёх лет.</strong> Специализируюсь на создании игр и интерактивных приложений, а также на fullstack-разработке веб-проектов.',
-        'resume.summary.p2': 'В работе придерживаюсь принципов ООП, SOLID и паттернов проектирования. Стремлюсь писать не просто работающий, а жизнеспособный код, который легко поддерживать и развивать. Умею быстро разбираться в чужом коде и эффективно взаимодействовать с командой.',
-        'resume.summary.p3': '<strong>Сейчас активно развиваюсь как Fullstack-разработчик</strong> (PHP, JavaScript, React, Node.js), но остаюсь открытым для интересных проектов в Unity. Ценю конструктивные отношения на основе взаимного уважения и верю, что навыки решения технических и творческих задач одинаково важны для качественного продукта.',
+
+        // Unity summary
+        'resume.summary.unity.p1': '<strong>Unity-разработчик с 3+ годами коммерческой разработки.</strong> Специализируюсь на 2D/3D играх для ПК, WebGL, Android и VR — от прототипа до релиза и публикации на площадках (RuStore, Яндекс Игры, VK Play).',
+        'resume.summary.unity.p2': 'Работал в геймдев-студии и веб-студии: разрабатывал игровые механики, системы магазинов, интеграции SDK, UI/UX, оптимизацию под мобильные устройства. Победитель гейм-джема среди 81 проекта.',
+        'resume.summary.unity.p3': 'В работе использую AI-ассистенты (ChatGPT, DeepSeek) как инженерные инструменты: прототипирование, рефакторинг, разбор legacy-кода. Есть опыт интеграции OpenAI API в продукт.',
+        
+        // Fullstack summary
+        'resume.summary.web.p1': '<strong>Fullstack-разработчик с опытом в веб-студии.</strong> Специализируюсь на backend-разработке (PHP, SQL) и fullstack-задачах: CRM-системы, корпоративные сайты, веб-приложения, REST API, интеграции с внешними сервисами.',
+        'resume.summary.web.p2': 'В работе придерживаюсь принципов ООП, SOLID и паттернов проектирования. Пишу код, который легко поддерживать и развивать. Умею быстро разбираться в legacy-коде.',
+        'resume.summary.web.p3': 'Также разрабатываю Telegram и Discord-ботов, включая бота с AI-интеграцией (OpenAI API). Есть опыт в геймдеве (Unity, C#), что дало понимание архитектуры и оптимизации. Сейчас развиваюсь в сторону TypeScript, React и Node.js.',
 
         // Contacts block
         'resume.contacts.title': 'Контакты',
@@ -300,13 +308,21 @@ const translations = {
         'resume.back': 'Home',
         'resume.pageTitle': 'Resume',
         'resume.name': 'Valentin Senin',
+        "resume.variantPrefix": "Resume",
         'resume.role': 'Unity / Fullstack Developer',
-        'resume.downloadPdf': 'Download PDF',
+        'resume.downloadPdf': 'Download PDF',      
 
         // Summary
-        'resume.summary.p1': '<strong>Unity &amp; C# developer with 3+ years of experience.</strong> Specializing in games, interactive applications, and fullstack web development.',
-        'resume.summary.p2': 'I follow OOP, SOLID, and design patterns. Writing maintainable, sustainable code and quickly understanding others\' work are my priorities.',
-        'resume.summary.p3': '<strong>Currently growing as a Fullstack developer</strong> (PHP, JavaScript, React, Node.js), while remaining open to Unity projects.',
+        
+        //Summary Unity
+        'resume.summary.unity.p1': '<strong>Unity developer with 3+ years of commercial experience.</strong> Specializing in 2D/3D games for PC, WebGL, Android and VR — from prototype to release and publishing on platforms (RuStore, Yandex Games, VK Play).',
+        'resume.summary.unity.p2': 'Worked in a game dev studio and web studio: developed game mechanics, shop systems, SDK integrations, UI/UX, mobile optimization. Winner of a game jam among 81 projects.',
+        'resume.summary.unity.p3': 'I use AI assistants (ChatGPT, DeepSeek) as engineering tools: prototyping, refactoring, legacy code analysis. Experience integrating OpenAI API into a product.',
+
+        //Summary Fullstack
+        'resume.summary.web.p1': '<strong>Fullstack developer with experience in a web studio.</strong> Specializing in backend development (PHP, SQL) and fullstack tasks: CRM systems, corporate websites, web apps, REST API, integrations with external services.',
+        'resume.summary.web.p2': 'I follow OOP, SOLID and design patterns. Writing code that is easy to maintain and extend. Quick at understanding legacy code.',
+        'resume.summary.web.p3': 'Also developing Telegram and Discord bots, including one with AI integration (OpenAI API). Background in game dev (Unity, C#). Currently growing towards TypeScript, React and Node.js.',
 
         // Contacts block
         'resume.contacts.title': 'Contacts',
