@@ -4,8 +4,8 @@ const translations = {
         // Titles
         'resume.docTitle': 'Резюме — Валентин Сенин',
         'resume.docDescription': 'Резюме Unity и Fullstack-разработчика',
-        'index.docTitle': 'Валентин Сенин — Unity / Fullstack-разработчик',
-        'index.docDescription': 'Личный сайт-визитка разработчика игр и веб-приложений. Unity, C#, PHP, React.',
+        'index.docTitle': 'Валентин Сенин — Unity / Fullstack-разработчик из Тюмени',
+        'index.docDescription': 'Unity / Fullstack-разработка: игры, сайты, CRM, боты. WebGL, ПК, Android, VR. Опыт более 4 лет. Обсудить проект →',
         
         // Header
         'nav.about': 'Обо мне',
@@ -15,8 +15,9 @@ const translations = {
         'logo.name': 'Cosyplaid',
 
         // Hero
+        'hero.h1': 'Валентин Сенин — Unity / Fullstack Developer из Сибири',
         'hero.title': 'Привет, я <span class="hero__title-accent">Валентин</span>',
-        'hero.role': 'Unity / Fullstack Developer',
+        'hero.role': 'Unity / Fullstack Developer из Сибири',
         'hero.subtitle': 'Создаю сайты, игры, ботов и веб-приложения — от задумки до результата',
 
         // About
@@ -195,8 +196,8 @@ const translations = {
         // Titles
         'resume.docTitle': 'Resume — Valentin Senin',
         'resume.docDescription': 'Resume of Unity and Fullstack developer',
-        'index.docTitle': 'Valentin Senin — Unity / Fullstack Developer',
-        'index.docDescription': 'Personal website of a game and web developer. Unity, C#, PHP, React.',
+        'index.docTitle': 'Valentin Senin — Unity / Fullstack Developer from Tyumen',
+        'index.docDescription': 'Unity / Fullstack development: games, websites, CRMs, bots. WebGL, PC, Android, VR. 4+ years of experience. Discuss a project →',
         
         // Header
         'nav.about': 'About',
@@ -206,8 +207,9 @@ const translations = {
         'logo.name': 'Cosyplaid',
 
         // Hero
+        'hero.h1': 'Valentin Senin — Unity / Fullstack Developer from Siberia',
         'hero.title': 'Hi, I\'m <span class="hero__title-accent">Valentin</span>',
-        'hero.role': 'Unity / Fullstack Developer',
+        'hero.role': 'Unity / Fullstack Developer From Siberia',
         'hero.subtitle': 'Building websites, games, bots &amp; web apps — from concept to result',
 
         // About
