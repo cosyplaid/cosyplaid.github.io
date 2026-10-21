@@ -68,6 +68,9 @@
     --shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
+#about, #services, #projects, #contacts {
+    scroll-margin-top: 50px; /* высота отступа */
+}
 /* ========================================
    БАЗОВЫЕ СБРОСЫ
    ======================================== */
@@ -766,6 +769,8 @@ ul {
 }
 
 .services__action {
+    display: flex;
+    gap: 14px;
     margin-top: 8px;
 }
 
@@ -806,7 +811,8 @@ ul {
 
 .capabilities__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 270px));
+    justify-content: center;
     gap: 24px;
 }
 

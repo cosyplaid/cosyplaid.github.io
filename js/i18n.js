@@ -9,9 +9,11 @@ const translations = {
         
         // Header
         'nav.about': 'Обо мне',
+        'nav.services': 'Услуги',
         'nav.projects': 'Проекты',
         'nav.contacts': 'Контакты',
         'nav.resume': 'Резюме',
+        'nav.price': 'Прайс',
         'logo.name': 'Cosyplaid',
 
         // Hero
@@ -61,6 +63,7 @@ const translations = {
         'services.bots.title': 'Разработка ботов',
         'services.bots.desc': 'Telegram-боты, Discord-боты, чат-боты с AI-интеграцией',
         'services.cta': 'Обсудить проект',
+        'services.price': 'Прайс',
         'services.visual': 'От идеи до релиза',
 
         // Projects
@@ -201,9 +204,11 @@ const translations = {
         
         // Header
         'nav.about': 'About',
+        'nav.services': 'Services',
         'nav.projects': 'Projects',
         'nav.contacts': 'Contacts',
         'nav.resume': 'Resume',
+        'nav.price': 'Pricing',
         'logo.name': 'Cosyplaid',
 
         // Hero
@@ -253,6 +258,7 @@ const translations = {
         'services.bots.title': 'Bot Development',
         'services.bots.desc': 'Telegram bots, Discord bots, AI-powered chatbots',
         'services.cta': 'Discuss Project',
+        'services.price': 'Pricing',
         'services.visual': 'From idea to release',
 
         // Projects

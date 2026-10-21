@@ -35,7 +35,7 @@ window.App.nav = (function() {
     // Активный раздел в навигации
     // ----------------------------------------
     function initActiveSection() {
-        const sectionIds = ['about', 'projects', 'contacts'];
+        const sectionIds = ['about', 'services', 'projects', 'contacts'];
         const sections = sectionIds
             .map(id => document.getElementById(id))
             .filter(Boolean);
@@ -91,7 +91,8 @@ window.App.nav = (function() {
 
         logo.addEventListener('click', (e) => {
             e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            const smooth = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
         });
     }
     

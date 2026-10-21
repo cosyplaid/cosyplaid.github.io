@@ -12,7 +12,7 @@ window.App.resume = (function() {
     };
 
     const VALID = Object.keys(PDF_LINKS);
-    const DEFAULT = 'unity';
+    const DEFAULT = 'fullstack';
 
     // Используется только для того, чтобы не анимировать первый рендер
     let currentTarget = null;
@@ -24,6 +24,7 @@ window.App.resume = (function() {
 
     // Анимация появления для блока
     function animateIn(el) {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;     
         if (!el || typeof el.animate !== 'function') return;
         el.animate(
             [
