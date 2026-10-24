@@ -23,6 +23,9 @@
         // Switch для резюме
         if (window.App?.resume) window.App.resume.init(); 
         
+        // Switch для прайса
+        if (window.App?.price) window.App.price.init(); 
+        
         // i18n инициализируется сам через свой DOMContentLoaded
     });
 })();

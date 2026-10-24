@@ -770,6 +770,7 @@ ul {
 
 .services__action {
     display: flex;
+    justify-content: center;
     gap: 14px;
     margin-top: 8px;
 }
