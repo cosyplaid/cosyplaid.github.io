@@ -1,8 +1,8 @@
-# robots.txt для https://cosyplaid.github.io
+# robots.txt для https://cosyplaid.ru
 # Документация: https://www.robotstxt.org/robotstxt.html
 
 User-agent: *
 Allow: /
 
 # Карта сайта
-Sitemap: https://cosyplaid.github.io/sitemap.xml
+Sitemap: https://cosyplaid.ru/sitemap.xml
