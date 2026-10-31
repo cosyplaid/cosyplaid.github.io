@@ -1020,6 +1020,13 @@ ul {
     transition: background 0.4s, border-color 0.4s;
 }
 
+.footer__inner
+{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
 /* ========================================
    ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ
    ======================================== */
@@ -1528,13 +1535,13 @@ ul {
     .modal__gallery img {
         height: 120px;
     }
+
+    .footer__inner {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 640px) {
-    
-    .footer {
-        padding-bottom: 80px;
-    }
     
     .header__back span {
         display: inline;
