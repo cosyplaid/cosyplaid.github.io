@@ -157,9 +157,7 @@ window.App.modal = (function() {
             btn.addEventListener('click', () => {
                 const text = btn.dataset.copy;
                 const message = btn.closest('.modal__body')?.querySelector('.email-copy__message');
-                const messageText = window.I18n?.current === 'en'
-                    ? 'Copied to clipboard'
-                    : 'Скопировано в буфер';
+                const messageText = 'Скопировано в буфер';
 
                 const showSuccess = () => {
                     btn.classList.add('is-copied');

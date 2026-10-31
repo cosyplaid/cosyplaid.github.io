@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="light" data-title-key="resume.docTitle" data-description-key="resume.docDescription">
+<html lang="ru" data-theme="light">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -51,7 +51,6 @@
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/resume.css" />
     
-    <script src="js/i18n.js" defer></script>
     <script src="js/nav.js" defer></script>
     <script src="js/resume.js" defer></script>
     <script src="js/main.js" defer></script>  
@@ -66,16 +65,11 @@
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <polyline points="15 18 9 12 15 6" />
                     </svg>
-                    <span data-i18n="resume.back">На главную</span>
+                    <span>На главную</span>
                 </a>
                 <a href="#" class="logo top-logo">
-                    <span data-i18n="resume.pageTitle">Резюме</span>
+                    <span>Резюме</span>
                 </a>
-            </div>
-
-            <div class="lang-switcher" role="group" aria-label="Переключение языка">
-                <button class="lang-btn active" type="button" data-lang="ru" aria-pressed="true" aria-label="Русский">RU</button>
-                <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" aria-label="English">EN</button>
             </div>
         </div>
     </header>
@@ -83,13 +77,12 @@
     <!-- ========== РЕЗЮМЕ ========== -->
     <main class="resume-page">
         <div class="container">
-            <div class="resume">                
-                <div class="resume__header">
-                    
+            <div class="resume">  
+
+                <div class="resume__header">      
                     <div class="resume__identity">
-                        <h1 class="resume__name" data-i18n="resume.name">Валентин Сенин</h1>
+                        <h1 class="resume__name">Валентин Сенин</h1>
                         <p class="resume__role">
-                            <!-- <span data-i18n="resume.variantPrefix">Резюме</span> -->
                             <span class="resume__role-part" data-resume-role="fullstack">Fullstack</span>     
                             <span class="resume__role-sep" aria-hidden="true"> / </span>
                             <span class="resume__role-part" data-resume-role="unity">Unity Developer</span>
@@ -111,7 +104,7 @@
                         </div>
                             <a id="resume-download" class="btn btn--primary"
                                href="resources/resume-unity.pdf" download>
-                                <span data-i18n="resume.downloadPdf">Скачать PDF</span>
+                                <span>Скачать PDF</span>
                             </a>
                     </div>
                 </div>
@@ -120,16 +113,16 @@
 
                 <!-- Unity-версия -->
                 <div class="resume__summary resume__content active" data-resume-content="unity">
-                    <p data-i18n="resume.summary.unity.p1">...</p>
-                    <p data-i18n="resume.summary.unity.p2">...</p>
-                    <p data-i18n="resume.summary.unity.p3">...</p>
+                    <p><strong>Unity-разработчик с 3+ годами коммерческой разработки.</strong> Специализируюсь на 2D/3D играх для ПК, WebGL, Android и VR — от прототипа до релиза и публикации на площадках (RuStore, Яндекс Игры, VK Play).</p>
+                    <p>Работал в геймдев-студии и веб-студии: разрабатывал игровые механики, системы магазинов, интеграции SDK, UI/UX, оптимизацию под мобильные устройства. Победитель гейм-джема среди 81 проекта.</p>
+                    <p>В работе использую AI-ассистенты (ChatGPT, DeepSeek) как инженерные инструменты: прототипирование, рефакторинг, разбор legacy-кода. Есть опыт интеграции OpenAI API в продукт.</p>
                 </div>
                 
                 <!-- Web-версия -->
                 <div class="resume__summary resume__content" data-resume-content="fullstack">
-                    <p data-i18n="resume.summary.web.p1">...</p>
-                    <p data-i18n="resume.summary.web.p2">...</p>
-                    <p data-i18n="resume.summary.web.p3">...</p>
+                    <p><strong>Fullstack-разработчик с опытом в веб-студии.</strong> Специализируюсь на backend-разработке (PHP, SQL) и fullstack-задачах: CRM-системы, корпоративные сайты, веб-приложения, REST API, интеграции с внешними сервисами.</p>
+                    <p>В работе придерживаюсь принципов ООП, SOLID и паттернов проектирования. Пишу код, который легко поддерживать и развивать. Умею быстро разбираться в legacy-коде.</p>
+                    <p>Также разрабатываю Telegram и Discord-ботов, включая бота с AI-интеграцией (OpenAI API). Есть опыт в геймдеве (Unity, C#), что дало понимание архитектуры и оптимизации. Сейчас развиваюсь в сторону TypeScript, React и Node.js.</p>
                 </div>
 
                 
@@ -137,14 +130,14 @@
                     <!-- ===== ЛЕВАЯ КОЛОНКА ===== -->
                     <div class="resume__sidebar">
                         <div class="resume__block">
-                            <h3 class="resume__block-title" data-i18n="resume.contacts.title">Контакты</h3>
+                            <h3 class="resume__block-title">Контакты</h3>
                             <ul class="resume__contact-list">
                                 <li>
                                     <svg class="resume__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/>
                                         <circle cx="12" cy="10" r="3"/>
                                     </svg>
-                                    <span data-i18n="resume.contacts.location">Тюмень, Россия</span>
+                                    <span>Тюмень, Россия</span>
                                 </li>
                                 <li>
                                     <svg class="resume__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -177,25 +170,25 @@
                         </div>
 
                         <div class="resume__block">
-                            <h3 class="resume__block-title" data-i18n="resume.skills.title">Технические навыки</h3>
+                            <h3 class="resume__block-title">Технические навыки</h3>
                             
                             <!-- Unity-версия -->
                             <div class="resume__content active" data-resume-content="unity">
                                 <ul class="resume__skill-list">
                                     <li>
-                                        <span class="resume__skill-label" data-i18n="resume.skills.langs">Языки и технологии</span>
+                                        <span class="resume__skill-label">Языки и технологии</span>
                                         C#, PHP, TypeScript, JavaScript, HTML, CSS, SQL
                                     </li>
                                     <li>
-                                        <span class="resume__skill-label" data-i18n="resume.skills.frameworks">Фреймворки и библиотеки</span>
+                                        <span class="resume__skill-label">Фреймворки и библиотеки</span>
                                         React, jQuery, Node.js, .NET, Unity
                                     </li>
                                     <li>
-                                        <span class="resume__skill-label" data-i18n="resume.skills.tools">Инструменты и подходы</span>
+                                        <span class="resume__skill-label">Инструменты и подходы</span>
                                         Git, OOP, SOLID, Design Patterns, ECS, Addressables, DOTween, UniTask, Photon, Zenject, URP, Custom Editor, XR
                                     </li>
                                     <li>
-                                        <span class="resume__skill-label" data-i18n="resume.skills.platforms">Платформы</span>
+                                        <span class="resume__skill-label">Платформы</span>
                                         WebGL, Android, PC, VR (SteamVR / OpenXR), SDK Integration
                                     </li>
                                 </ul>
@@ -205,19 +198,19 @@
                             <div class="resume__content" data-resume-content="fullstack">
                                 <ul class="resume__skill-list">
                                     <li>
-                                        <span class="resume__skill-label" data-i18n="resume.skills.langs">Языки и технологии</span>
+                                        <span class="resume__skill-label">Языки и технологии</span>
                                         PHP, SQL, TypeScript, JavaScript, HTML, CSS
                                     </li>
                                     <li>
-                                        <span class="resume__skill-label" data-i18n="resume.skills.frameworks">Фреймворки и библиотеки</span>
+                                        <span class="resume__skill-label">Фреймворки и библиотеки</span>
                                         React, Node.js, jQuery
                                     </li>
                                     <li>
-                                        <span class="resume__skill-label" data-i18n="resume.skills.tools">Инструменты и подходы</span>
+                                        <span class="resume__skill-label">Инструменты и подходы</span>
                                         Git, OOP, SOLID, Design Patterns, MVC, REST API, Composer, AI Tools
                                     </li>
                                     <li>
-                                        <span class="resume__skill-label" data-i18n="resume.skills.platforms">Платформы</span>
+                                        <span class="resume__skill-label">Платформы</span>
                                         Web, CRM, E-commerce, Telegram / Discord Bots
                                     </li>
                                 </ul>
@@ -226,15 +219,15 @@
                         </div>
 
                         <div class="resume__block">
-                            <h3 class="resume__block-title" data-i18n="resume.langs.title">Языки</h3>
+                            <h3 class="resume__block-title">Языки</h3>
                             <ul class="resume__lang-list">
                                 <li>
-                                    <span class="resume__lang-label" data-i18n="resume.langs.russianLabel">Русский</span>
-                                    <span data-i18n="resume.langs.russianLevel">— Родной</span>
+                                    <span class="resume__lang-label">Русский</span>
+                                    <span>— Родной</span>
                                 </li>
                                 <li>
                                     <span class="resume__lang-label">English</span>
-                                    <span data-i18n="resume.langs.englishLevel">— B1 / B2</span>
+                                    <span>— B1 / B2</span>
                                 </li>
                             </ul>
                         </div>
@@ -243,84 +236,84 @@
                     <!-- ===== ПРАВАЯ КОЛОНКА ===== -->
                     <div class="resume__main">
                         <div class="resume__block">
-                            <h3 class="resume__block-title" data-i18n="resume.exp.title">Опыт работы</h3>
+                            <h3 class="resume__block-title">Опыт работы</h3>
 
                             <!-- Unity-версия -->
                             <div class="resume__content active" data-resume-content="unity">
                                 <!-- 1. Айти Сфера -->
                                 <div class="resume__item">
                                     <div class="resume__item-header">
-                                        <h4 class="resume__item-title" data-i18n="resume.exp.job1.title">Fullstack разработчик</h4>
-                                        <span class="resume__item-date" data-i18n="resume.exp.job1.date">Сентябрь 2025 — настоящее</span>
+                                        <h4 class="resume__item-title">Fullstack разработчик</h4>
+                                        <span class="resume__item-date">Сентябрь 2025 — настоящее</span>
                                     </div>
-                                    <p class="resume__item-company" data-i18n="resume.exp.job1.company">Студия WEB-разработки «Айти Сфера» · гибрид</p>
+                                    <p class="resume__item-company">Студия WEB-разработки «Айти Сфера» · гибрид</p>
                                     <ul class="resume__item-desc">
-                                        <li data-i18n="resume.exp.job1.f1">Реализовал и сопровождал CRM-системы...</li>
-                                        <li data-i18n="resume.exp.job1.f2">Провёл рефакторинг legacy-кода...</li>
-                                        <li data-i18n="resume.exp.job1.f3">Разработал систему ролей...</li>
-                                        <li data-i18n="resume.exp.job1.f4">Оптимизировал SQL-запросы...</li>
+                                        <li>Реализовал и сопровождал CRM-системы и корпоративные сайты на PHP, SQL, jQuery</li>
+                                        <li>Провёл рефакторинг legacy-кода для повышения производительности и поддерживаемости</li>
+                                        <li>Разработал систему ролей и прав доступа, модуль PUSH-уведомлений через внешние API</li>
+                                        <li>Оптимизировал SQL-запросы, снизив нагрузку на базы данных</li>
                                     </ul>
                                 </div>
                         
                                 <!-- 2. Hustla Games -->
                                 <div class="resume__item">
                                     <div class="resume__item-header">
-                                        <h4 class="resume__item-title" data-i18n="resume.exp.job2.title">Game Developer</h4>
-                                        <span class="resume__item-date" data-i18n="resume.exp.job2.date">Май 2021 — Декабрь 2023</span>
+                                        <h4 class="resume__item-title">Game Developer</h4>
+                                        <span class="resume__item-date">Май 2021 — Декабрь 2023</span>
                                     </div>
-                                    <p class="resume__item-company" data-i18n="resume.exp.job2.company">Студия разработки игр «Hustla Games» · удалённо</p>
+                                    <p class="resume__item-company">Студия разработки игр «Hustla Games» · удалённо</p>
                                     <ul class="resume__item-desc">
-                                        <li data-i18n="resume.exp.job2.f1">Разработал и опубликовал 15+ игр...</li>
-                                        <li data-i18n="resume.exp.job2.f2">Победитель гейм-джема среди 81 проекта</li>
-                                        <li data-i18n="resume.exp.job2.f3">Внедрял самописные инструменты...</li>
-                                        <li data-i18n="resume.exp.job2.f4">Интегрировал SDK и API игровых площадок...</li>
+                                        <li>Разработал и опубликовал 15+ игр под WebGL, Android и PC</li>
+                                        <li>Победитель гейм-джема среди 81 проекта</li>
+                                        <li>Внедрял самописные инструменты и инспекторы для ускорения разработки</li>
+                                        <li>Интегрировал SDK и API игровых площадок (Яндекс Игры, VK Games, Y8, RuStore)</li>
                                     </ul>
                                 </div>
 
                                 <!-- 3. Инфотех -->
                                 <div class="resume__item">
                                     <div class="resume__item-header">
-                                        <h4 class="resume__item-title" data-i18n="resume.exp.job3.title">Unity Developer</h4>
-                                        <span class="resume__item-date" data-i18n="resume.exp.job3.date">Сентябрь 2021 — Ноябрь 2022</span>
+                                        <h4 class="resume__item-title">Unity Developer</h4>
+                                        <span class="resume__item-date">Сентябрь 2021 — Ноябрь 2022</span>
                                     </div>
-                                    <p class="resume__item-company" data-i18n="resume.exp.job3.company">ООО «Инфотех» · Тюмень / удалённо</p>
+                                    <p class="resume__item-company">ООО «Инфотех» · Тюмень / удалённо</p>
                                     <ul class="resume__item-desc">
-                                        <li data-i18n="resume.exp.job3.f1">Внедрил Unity как основной инструмент...</li>
-                                        <li data-i18n="resume.exp.job3.f2">Разработал 11 тренажеров...</li>
-                                        <li data-i18n="resume.exp.job3.f3">Наладил сотрудничество с заказчиками...</li>
+                                        <li>Внедрил Unity как основной инструмент, перенёс существующие проекты</li>
+                                        <li>Разработал 11 тренажеров и виртуальных лабораторных работ с VR-поддержкой (HTC Vive Pro, SteamVR)</li>
+                                        <li>Наладил сотрудничество с заказчиками из России, Белоруссии и Казахстана</li>
                                     </ul>
                                 </div>
                             </div>
                             
-                            <!-- Web-версия -->
+                            <!-- Fullstack-версия -->
                             <div class="resume__content" data-resume-content="fullstack">
-                                <!-- 1. Айти Сфера (расширенная) -->
+                                <!-- 1. Айти Сфера -->
                                 <div class="resume__item">
                                     <div class="resume__item-header">
-                                        <h4 class="resume__item-title" data-i18n="resume.exp.job1.title">Fullstack разработчик</h4>
-                                        <span class="resume__item-date" data-i18n="resume.exp.job1.date">Сентябрь 2025 — настоящее</span>
+                                        <h4 class="resume__item-title">Fullstack разработчик</h4>
+                                        <span class="resume__item-date">Сентябрь 2025 — настоящее</span>
                                     </div>
-                                    <p class="resume__item-company" data-i18n="resume.exp.job1.company">Студия WEB-разработки «Айти Сфера» · гибрид</p>
+                                    <p class="resume__item-company">Студия WEB-разработки «Айти Сфера» · гибрид</p>
                                     <ul class="resume__item-desc">
-                                        <li data-i18n="resume.exp.job1.f1">Реализовал и сопровождал CRM-системы...</li>
-                                        <li data-i18n="resume.exp.job1.f2">Провёл рефакторинг legacy-кода...</li>
-                                        <li data-i18n="resume.exp.job1.f3">Разработал систему ролей...</li>
-                                        <li data-i18n="resume.exp.job1.f4">Оптимизировал SQL-запросы...</li>
+                                        <li>Реализовал и сопровождал CRM-системы и корпоративные сайты на PHP, SQL, jQuery</li>
+                                        <li>Провёл рефакторинг legacy-кода для повышения производительности и поддерживаемости</li>
+                                        <li>Разработал систему ролей и прав доступа, модуль PUSH-уведомлений через внешние API</li>
+                                        <li>Оптимизировал SQL-запросы, снизив нагрузку на базы данных</li>
                                     </ul>
                                 </div>
 
                                 <!-- 2. Hustla Games -->
                                 <div class="resume__item">
                                     <div class="resume__item-header">
-                                        <h4 class="resume__item-title" data-i18n="resume.exp.job2.title">Game Developer (Web / Backend)</h4>
-                                        <span class="resume__item-date" data-i18n="resume.exp.job2.date">Май 2021 — Декабрь 2023</span>
+                                        <h4 class="resume__item-title">Game Developer</h4>
+                                        <span class="resume__item-date">Май 2021 — Декабрь 2023</span>
                                     </div>
-                                    <p class="resume__item-company" data-i18n="resume.exp.job2.company">Студия разработки игр «Hustla Games» · удалённо</p>
+                                    <p class="resume__item-company">Студия разработки игр «Hustla Games» · удалённо</p>
                                     <ul class="resume__item-desc">
-                                        <li data-i18n="resume.exp.job2.f1">Разработал 15+ игр на Unity для WebGL и ПК</li>
-                                        <li data-i18n="resume.exp.job2.f2">Интегрировал SDK и API площадок (Яндекс, VK Play, Y8, RuStore)</li>
-                                        <li data-i18n="resume.exp.job2.f3">Победитель гейм-джема среди 81 проекта</li>
-                                        <li data-i18n="resume.exp.job2.f4">Работал с WebGL-сборками и интеграциями</li>
+                                        <li>Разработал и опубликовал 15+ игр под WebGL, Android и PC</li>
+                                        <li>Победитель гейм-джема среди 81 проекта</li>
+                                        <li>Внедрял самописные инструменты и инспекторы для ускорения разработки</li>
+                                        <li>Интегрировал SDK и API игровых площадок (Яндекс Игры, VK Games, Y8, RuStore)</li>
                                     </ul>
                                 </div>
 
@@ -328,25 +321,27 @@
                             
                         </div>
 
+                        <!-- ===== ОБРАЗОВАНИЕ ===== -->
                         <div class="resume__block">
-                            <h3 class="resume__block-title" data-i18n="resume.edu.title">Образование</h3>
+                            <h3 class="resume__block-title">Образование</h3>
 
                             <div class="resume__item">
                                 <div class="resume__item-header">
-                                    <h4 class="resume__item-title" data-i18n="resume.edu.uni1.name">Тюменский Индустриальный Университет</h4>
-                                    <span class="resume__item-date" data-i18n="resume.edu.degreeIncomplete">неполное высшее</span>
+                                    <h4 class="resume__item-title">Тюменский Индустриальный Университет</h4>
+                                    <span class="resume__item-date">неполное высшее</span>
                                 </div>
-                                <p class="resume__item-company" data-i18n="resume.edu.uni1.details">Институт Транспорта · ...</p>
+                                <p class="resume__item-company">Институт Транспорта · Наземные транспортно-технологические средства (специалитет)</p>
                             </div>
 
                             <div class="resume__item">
                                 <div class="resume__item-header">
-                                    <h4 class="resume__item-title" data-i18n="resume.edu.uni2.name">Томский Государственный Университет</h4>
-                                    <span class="resume__item-date" data-i18n="resume.edu.degreeIncomplete">неполное высшее</span>
+                                    <h4 class="resume__item-title">Томский Государственный Университет</h4>
+                                    <span class="resume__item-date">неполное высшее</span>
                                 </div>
-                                <p class="resume__item-company" data-i18n="resume.edu.uni2.details">Механико-математический факультет · ...</p>
+                                <p class="resume__item-company">Механико-математический факультет · Математика и компьютерные науки (бакалавриат)</p>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -356,7 +351,7 @@
     <!-- ========== ФУТЕР ========== -->
     <footer class="resume-footer">
         <div class="container">
-            <p data-i18n="resume.footer.copy">© 2026 Валентин Сенин. Все права защищены.</p>
+            <p>© 2026 Валентин Сенин. Все права защищены.</p>
         </div>
     </footer>
 

@@ -14,7 +14,6 @@ const translations = {
         'nav.contacts': 'Контакты',
         'nav.resume': 'Резюме',
         'nav.price': 'Прайс',
-        'logo.name': 'Cosyplaid',
 
         // Hero
         'hero.h1': 'Валентин Сенин — Unity / Fullstack Developer из Сибири',
@@ -360,7 +359,6 @@ const translations = {
         'nav.contacts': 'Contacts',
         'nav.resume': 'Resume',
         'nav.price': 'Pricing',
-        'logo.name': 'Cosyplaid',
 
         // Hero
         'hero.h1': 'Valentin Senin — Unity / Fullstack Developer from Siberia',

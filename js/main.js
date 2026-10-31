@@ -25,7 +25,5 @@
         
         // Switch для прайса
         if (window.App?.price) window.App.price.init(); 
-        
-        // i18n инициализируется сам через свой DOMContentLoaded
     });
 })();

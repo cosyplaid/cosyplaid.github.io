@@ -1,0 +1,68 @@
+/* ==========================================================================
+   ЛОГОТИП РАЗРАБОТЧИКА (SVG)
+   ========================================================================== */
+
+/* Ссылка-обёртка (может быть в любом месте сайта) */
+.dev-logo-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    margin-block: -15px;
+    transition: opacity 0.3s;
+}
+
+/* Управление размерами самого SVG */
+.dev-logo {
+    width: 200px;
+    height: auto;
+    display: block;
+}
+
+/* --- 1. Рамка --- */
+#dev-logo-frame {
+    opacity: 0.1;
+    transition: opacity 0.3s ease;
+}
+
+.dev-logo-link:hover #dev-logo-frame {
+    opacity: 0.8;
+}
+
+/* --- 2. Powered by --- */
+#dev-logo-powered {
+    opacity: 0.5;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.dev-logo-link:hover #dev-logo-powered {
+    color: var(--accent, #f6c43b); /* Добавил фолбэк, если --accent не задан */
+    opacity: 1;
+}
+
+/* --- 3. Текст Cosyplaid --- */
+#dev-logo-cosyplaid {
+    opacity: 0.5;
+    transform-origin: center center; 
+    transform: scale(0.85) rotate(0deg); 
+    transition: transform 0.3s ease, 
+                opacity 0.3s ease;
+}
+
+.dev-logo-link:hover #dev-logo-cosyplaid {
+    opacity: 1; 
+    transform: scale(0.95) rotate(-5deg); 
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                opacity 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .dev-logo {
+        width: 180px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .dev-logo {
+        width: 180px;
+    }
+}

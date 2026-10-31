@@ -281,6 +281,7 @@ ul {
     transition: color 0.2s;
     position: relative;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .nav__link::after {
@@ -503,7 +504,7 @@ ul {
 .tech-stack__scroll {
     overflow: hidden;
     position: relative;
-    padding: 4px 0;
+    padding: 10px 0;
     mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
@@ -513,7 +514,6 @@ ul {
     gap: 40px;
     animation: scrollTech 20s linear infinite;
     width: max-content;
-    padding: 6px 0;
 }
 
 .tech-stack__item {
@@ -532,17 +532,24 @@ ul {
     cursor: default;
 }
 
-.tech-stack__item i {
-    font-size: 1.2em;
-    line-height: 1;
+/* Настройки для новых SVG-картинок */
+.tech-stack__icon {
+    width: 1.2em;
+    height: 1.2em;
+    object-fit: contain;
+    display: block;
+    /* Если иконки в SVG используют fill="currentColor", 
+       то они будут автоматически краситьcя в color контейнера */
 }
 
+/* Светлая тема */
 [data-theme="light"] .tech-stack__item {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     color: var(--text-secondary);
 }
 
+/* Темная тема */
 [data-theme="dark"] .tech-stack__item {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1388,42 +1395,6 @@ ul {
 }
 
 /* ========================================
-   ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ
-   ======================================== */
-.lang-switcher {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-    margin-left: 16px;
-}
-
-.lang-btn {
-    background: transparent;
-    border: none;
-    padding: 4px 8px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: all 0.3s;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-/* Hover языков — оставляем везде */
-.lang-btn:hover {
-    color: rgba(255, 255, 255, 0.85);
-}
-
-.lang-btn.active {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.12);
-    padding: 4px 10px;
-    border-radius: 100px;
-}
-
-/* ========================================
    АДАПТИВ
    ======================================== */
 @media (max-width: 1024px) {
@@ -1456,72 +1427,10 @@ ul {
     .header {
         background: #0a0a0a ;
     }
-    .about__grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-    .service-item {
-        padding: 20px 16px;
-    }
-    .projects__grid {
-        grid-template-columns: 1fr;
-        max-width: 480px;
-        margin: 0 auto;
-    }
-    .hero__title {
-        font-size: 2.5rem;
-    }
-    .hero__image {
-        height: 40vh;
-        min-height: 300px;
-    }
-    .section-title {
-        font-size: 2rem;
-    }
-    .tech-stack__item {
-        padding: 10px 24px;
-        font-size: 0.875rem;
-    }
-    .tech-stack__wrapper {
-        padding: 110px 0 15px;
-    }
-    .skills__columns {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-
-    .lang-switcher {
-        margin-left: 8px;
-    }
-
-    .lang-btn {
-        font-size: 0.6rem;
-        padding: 2px 6px;
-    }
-
-    .modal__image {
-        height: 300px;
-    }
-
-    .modal__gallery img {
-        height: 120px;
-    }
-}
-
-@media (max-width: 640px) {
-    
-    .footer {
-        padding-bottom: 80px;
-    }
-    
-    .header__back span {
-        display: inline;
-    }
-
     .burger {
         display: flex;
     }
-
+    /* Прячем обычное меню и делаем его выпадающим */
     .nav {
         position: absolute;
         top: 100%;
@@ -1536,7 +1445,6 @@ ul {
         pointer-events: none;
         z-index: 999;
     }
-
     .nav--open {
         transform: translateY(0);
         opacity: 1;
@@ -1578,6 +1486,58 @@ ul {
         height: 1px;
         background: rgba(255, 255, 255, 0.15);
         margin: 4px 0;
+    }
+    .about__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .service-item {
+        padding: 20px 16px;
+    }
+    .projects__grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    .hero__title {
+        font-size: 2.5rem;
+    }
+    .hero__image {
+        height: 40vh;
+        min-height: 300px;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .tech-stack__item {
+        padding: 10px 24px;
+        font-size: 0.875rem;
+    }
+    .tech-stack__wrapper {
+        padding: 110px 0 15px;
+    }
+    .skills__columns {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .modal__image {
+        height: 300px;
+    }
+
+    .modal__gallery img {
+        height: 120px;
+    }
+}
+
+@media (max-width: 640px) {
+    
+    .footer {
+        padding-bottom: 80px;
+    }
+    
+    .header__back span {
+        display: inline;
     }
 
     .hero__title {
