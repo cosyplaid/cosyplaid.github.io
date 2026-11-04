@@ -365,75 +365,77 @@
 <div id="about">
     <section class="about section-gradient">
         <div class="container">
+            
+            <!-- Классический заголовок -->
             <h2 class="section-title">Обо мне</h2>
             
-            <div class="about__grid">
-                <div class="about__content"> 
-                    <div class="about__title-row">
-                        <div class="tag user-select-none">
-                            <span>Тюмень, Россия</span>
-                        </div>
-                        <p class="about__title">Unity / Fullstack разработчик</p>
-                    </div>
-                    <p>Разрабатываю сайты и веб-приложения (лендинги, корпоративные сайты, CRM), кроссплатформенные игры (ПК, мобильные, WebGL, XR), ботов и другое ПО. Победитель гейм-джема среди 81 проекта.</p>
-                    <p>Если у вас есть задача в IT — обращайтесь. В работе для меня важно, чтобы обе стороны были услышаны: ваши цели, потребности и ограничения — мои предложения, решения задачи и аргументы.</p>
-                    <p>Вижу слабые места и риски — скажу заранее. Вижу более удачное решение — предложу. В конечном итоге мы вместе придём к ожидаемому результату.</p>
+            <div class="about__layout">
+                <!-- Левая колонка: Текст и факты -->
+                <div class="about__content">
+                    <p class="about__lead">Разрабатываю сайты и веб-приложения (лендинги, CRM), кроссплатформенные игры (ПК, WebGL, Android, VR), ботов и другое ПО.</p>
+                    
+                    <p>В работе для меня важно, чтобы обе стороны были услышаны: ваши цели, потребности и ограничения — мои предложения, решения задачи и аргументы. Вижу слабые места и риски — скажу заранее. Вижу более удачное решение — предложу.</p>
+                    
+                    <!-- Блок с достижениями -->
+                    <ul class="about__stats">
+                        <li>
+                            <svg class="about__stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>3+ года опыта</span>
+                        </li>
+                        <li>
+                            <svg class="about__stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>15+ игр в релизе</span>
+                        </li>
+                        <li>
+                            <svg class="about__stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Победитель гейм-джема</span>
+                        </li>
+                        <li>
+                            <svg class="about__stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <span>Открыт к проектам</span>
+                        </li>
+                    </ul>
                 </div>
                 
-                <div class="skills">
-                    <div class="skills__columns">
-                        <div class="skills__column">
-                            <div class="skills__header">
-                                <span class="skills__label">Веб-разработка</span>
-                                <span class="skills__percent">68%</span>
-                            </div>
-                            <div class="skills__bar">
-                                <div class="skills__bar-fill" style="width: 68%;"></div>
-                            </div>
-                            <div class="skills__stack user-select-none">
-                                <span class="tag tag--small">PHP</span>
-                                <span class="tag tag--small">HTML</span>
-                                <span class="tag tag--small">CSS</span>
-                                <span class="tag tag--small">JavaScript</span>
-                                <span class="tag tag--small">SQL</span>
-                            </div>
-                        </div>
-                        
-                        <div class="skills__column">
-                            <div class="skills__header">
-                                <span class="skills__label">Разработка игр</span>
-                                <span class="skills__percent">79%</span>
-                            </div>
-                            <div class="skills__bar">
-                                <div class="skills__bar-fill" style="width: 79%;"></div>
-                            </div>
-                            <div class="skills__stack user-select-none">
-                                <span class="tag tag--small">C#</span>
-                                <span class="tag tag--small">Unity</span>
-                                <span class="tag tag--small">Phaser.JS</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skills__learning user-select-none">
-                        <h4 class="skills__subtitle">Сейчас в изучении</h4>
-                        <div class="skills__tags">
-                            <span class="tag tag--learning">TypeScript</span>
-                            <span class="tag tag--learning">React</span>
-                            <span class="tag tag--learning">Node.js</span>
-                            <span class="tag tag--learning">Next.js</span>
-                        </div>
-                    </div>
-                    
-                    <div class="about__actions user-select-none">
-                        <a href="resume.html" rel="nofollow" class="btn btn--secondary">
-                            <span>Моё резюме</span>
-                        </a>
+                <!-- Правая колонка: Карточка с фактами -->
+                <div class="about__sidebar">
+                    <div class="about__aside">
+                        <ul class="about__facts">
+                            <li>
+                                <div class="about__fact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                                </div>
+                                <div class="about__fact-text">
+                                    <span class="about__fact-label">Локация</span>
+                                    <span class="about__fact-value">Тюмень, Россия</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="about__fact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                                </div>
+                                <div class="about__fact-text">
+                                    <span class="about__fact-label">Языки</span>
+                                    <span class="about__fact-value">Русский, English (B1/B2)</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="about__fact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                                </div>
+                                <div class="about__fact-text">
+                                    <span class="about__fact-label">Опыт</span>
+                                    <span class="about__fact-value">Unity / Fullstack</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="resume.html" rel="nofollow" class="btn btn--primary">Мое резюме</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     
 <!-- ========== ЧТО Я УМЕЮ ========== -->
 <section class="capabilities">
