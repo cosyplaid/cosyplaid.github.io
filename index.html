@@ -213,15 +213,44 @@
 
     <!-- ========== HERO ========== -->  
     <section class="hero user-select-none">
-        <h1 class="sr-only">Валентин Сенин — Unity / Fullstack Developer из Сибири</h1>
-        <div class="hero__image-wrapper">
-            <div class="hero__image">
-                <img src="resources/bg.jpg" alt="Валентин Сенин" fetchpriority="high" decoding="async" />
-            </div>
+        <!-- Фоновое изображение -->
+        <div class="hero__bg">
+            <img src="resources/bg.jpg" alt="Фон" fetchpriority="high" decoding="async" />
+            <div class="hero__overlay"></div>
+        </div>
+
+        <div class="container hero__container">
             <div class="hero__content">
-                <p class="hero__title">Привет, я <span class="hero__title-accent">Валентин</span></p>
-                <p class="hero__role">Unity / Fullstack Developer из Сибири</p>
-                <p class="hero__subtitle">Создаю сайты, игры, ботов и веб-приложения — от задумки до результата</p>
+                <!-- Имя и Должность -->
+                <h1 class="hero__title">
+                    Валентин Сенин<br>
+                    <span class="hero__role">Unity / Fullstack-разработчик</span>
+                </h1>
+                
+                <!-- Описание с географией -->
+                <p class="hero__subtitle">
+                    Создаю и продвигаю сайты, кроссплатформенные игры и веб-приложения в России и по всему миру. Помогаю бизнесу автоматизировать процессы и запускать проекты под ключ.
+                </p>
+
+                <ul class="hero__services">
+                    <li class="hero__services-tag">Сайты</li>
+                    <li class="hero__services-tag">CRM</li>
+                    <li class="hero__services-tag">Боты</li>
+                    <li class="hero__services-tag">Игры</li>
+                </ul>
+
+                <!-- Кнопки -->
+                <div class="hero__actions">
+                    <a href="#services" class="btn btn--primary">Мои услуги</a>
+                    <a href="#contacts" class="btn btn--secondary">Контакты</a>
+                </div>
+            </div>
+
+            <!-- Правая часть: Фото -->
+            <div class="hero__image-wrapper">
+                <div class="hero__image-box">
+                    <img src="resources/img/hero.JPG" class="hero__image">
+                </div>
             </div>
         </div>
     </section>
