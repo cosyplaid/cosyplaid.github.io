@@ -426,30 +426,6 @@ ul {
     max-width: 520px; /* Чуть расширил, чтобы текст дышал */
 }
 
-.hero__services {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    list-style: none;
-    padding: 0;
-    margin: 32px 0 0 0;
-}
-
-.hero__services-tag {
-    font-size: 0.9rem;
-    font-weight: 500;
-    padding: 8px 18px;
-    border-radius: 100px; /* Форма таблетки */
-    
-    /* Полупрозрачный фон и граница */
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: rgba(255, 255, 255, 0.85);
-    
-    cursor: default;
-    transition: all 0.3s ease;
-}
-
 .hero__actions {
     display: flex;
     gap: 16px;
@@ -501,11 +477,11 @@ ul {
 .about__lead { font-size: 1.25rem; color: var(--text-primary); font-weight: 500; margin-bottom: 20px; }
 .about__content > p { margin-bottom: 32px; }
 
-.about__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; list-style: none; padding: 0; margin: 0 0 40px 0; }
+.about__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; list-style: none; padding: 0; }
 .about__stats li { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 500; color: var(--text-primary); }
 .about__stat-icon { width: 20px; height: 20px; color: var(--accent); flex-shrink: 0; }
 
-.about__sidebar { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; }
+.about__sidebar { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; max-width: 500px;}
 .about__aside { display: flex; flex-direction: column; gap: 24px; }
 .about__aside .btn--primary { width: 100%; padding: 14px 24px; text-align: center; justify-content: center; }
 
@@ -631,12 +607,6 @@ ul {
     .nav__link--external:hover { color: #ffffff; }
     .nav__link--external:hover::after { width: 100%; }
 
-    .hero__services-tag:hover {
-        background: rgba(255, 255, 255, 0.15);
-        border-color: rgba(255, 255, 255, 0.3);
-        color: #ffffff;
-    }
-
     [data-theme="light"] .tech-stack__item:hover { background: var(--bg-card-hover); color: var(--text-primary); border-color: var(--accent); transform: scale(1.05); }
     [data-theme="dark"] .tech-stack__item:hover { background: rgba(59, 130, 246, 0.12); border-color: var(--accent); color: #ffffff; transform: scale(1.08); }
 
@@ -692,9 +662,6 @@ ul {
     .hero__image-box {
         max-width: 400px;
     }
-    .hero__services {
-        justify-content: center; /* Центрируем теги на мобилках */
-    }
 
     /* Другие секции */
     .services__grid { grid-template-columns: 1fr; gap: 40px; }
@@ -707,19 +674,30 @@ ul {
     /* About */
     .about__layout {
         grid-template-columns: 1fr;
+        justify-items: center;
         gap: 40px;
         margin-top: 32px;
     }
     .about__sidebar {
-        max-width: 100%;
-    }
-    .about__aside .btn--primary {
-        width: fit-content;
+        width: 100%;
     }
     .about__stats {
         grid-template-columns: max-content max-content;
-        justify-content: start;
+        justify-content: center;
         gap: 12px 48px;
+    }
+    .about__facts {
+        align-items: center; 
+    }
+    .about__facts li {
+        justify-content: flex-start;
+        width: 100%;
+        max-width: 280px;
+    }
+    .about__aside .btn--primary {
+        max-width: 300px;
+        min-width: fit-content;
+        margin: 0 auto;
     }
 }
 
@@ -744,7 +722,7 @@ ul {
     .nav__divider { display: none; }
     .nav__divider-mobile { display: flex !important; width: 40px; height: 1px; background: rgba(255, 255, 255, 0.15); margin: 4px 0; }
     
-    .about__stats { grid-template-columns: 1fr; gap: 12px; margin-bottom: 0px; }
+    .about__stats { grid-template-columns: 1fr; gap: 12px;}
     .service-item { padding: 20px 16px; }
     .projects__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
     
