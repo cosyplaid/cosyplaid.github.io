@@ -19,34 +19,11 @@
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/price.css" />
 
-    <script>
-        (function() {
-            const saved = localStorage.getItem('theme');
-            let theme;
-            if (saved === 'light' || saved === 'dark') {
-                theme = saved;
-            } else {
-                const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-                theme = prefersLight ? 'light' : 'dark';
-            }
-            document.documentElement.setAttribute('data-theme', theme);
-        })();
-    </script>
-
-    <script src="js/theme.js" defer></script>
     <script src="js/nav.js" defer></script>
     <script src="js/price.js" defer></script>
     <script src="js/main.js" defer></script>
 </head>
 <body>
-
-    <!-- ========== ТУМБЛЕР ТЕМЫ ========== -->
-    <div class="theme-switcher">
-        <label class="toggle-switch">
-            <input type="checkbox" id="theme-toggle" aria-label="Переключить тему" />
-            <span class="toggle-slider" aria-hidden="true"></span>
-        </label>
-    </div>
 
     <!-- ========== ШАПКА ========== -->
     <header class="header user-select-none">

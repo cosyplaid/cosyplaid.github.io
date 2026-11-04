@@ -6,7 +6,6 @@
     padding: 100px 0 60px;
     background: var(--bg-primary);
     min-height: 100vh;
-    transition: background 0.4s;
 }
 
 /* ========================================
@@ -69,7 +68,7 @@
 .price-tab.active {
     background: var(--bg-card);
     color: var(--text-primary);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* ========================================
@@ -281,7 +280,6 @@
 /* ========================================
    ДОПОЛНИТЕЛЬНО
    ======================================== */
-
 .price-extra__title {
     font-size: 1.25rem;
     font-weight: 700;
@@ -325,12 +323,6 @@
     border-radius: var(--radius-sm);
 }
 
-/* Светлая тема — «латте» + коричневая граница */
-[data-theme="light"] .price-scope {
-    background: #E8DFD0;
-    border-left-color: var(--text-secondary);
-}
-
 .price-scope__title {
     font-size: 1.25rem;
     font-weight: 700;
@@ -362,8 +354,7 @@
     margin-bottom: 16px;
 }
 
-.price-cta__actions
-{
+.price-cta__actions {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -446,11 +437,7 @@
    ======================================== */
 @media (hover: hover) and (pointer: fine) {
     .price-card:hover {
-        border-color: var(--text-muted);
-        box-shadow: var(--shadow);
-    }
-
-    [data-theme="dark"] .price-card:hover {
         border-color: var(--accent);
+        box-shadow: var(--shadow);
     }
 }

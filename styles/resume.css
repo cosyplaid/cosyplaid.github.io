@@ -335,9 +335,9 @@
    ФУТЕР
    ======================================== */
 .resume-footer {
-    border-top: 1px solid var(--resume-border);
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая линия, как у шапки */
     padding: 32px 0;
-    color: var(--resume-text-muted);
+    color: rgba(255, 255, 255, 0.5); /* Полупрозрачный белый текст */
     font-size: 0.875rem;
     text-align: center;
 }
