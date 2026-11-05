@@ -357,8 +357,8 @@
     </section>
 
     <!-- ========== ОБО МНЕ ========== -->
-<div id="about">
-    <section class="about section-gradient">
+<div id="about" class="section-gradient">
+    <section class="about">
         <div class="container">
             
             <!-- Классический заголовок -->
@@ -369,8 +369,11 @@
                 <div class="about__content">
                     <p class="about__lead">Разрабатываю сайты и веб-приложения (лендинги, CRM), кроссплатформенные игры (ПК, WebGL, Android, VR), ботов и другое ПО.</p>
                     
-                    <p>В работе для меня важно, чтобы обе стороны были услышаны: ваши цели, потребности и ограничения — мои предложения, решения задачи и аргументы. Вижу слабые места и риски — скажу заранее. Вижу более удачное решение — предложу.</p>
+                    <p>В работе для меня важно, чтобы обе стороны были услышаны: ваши цели, потребности и ограничения — мои предложения, решения задачи и аргументы.</p>
                     
+                    <p>Лаконичные, рабочие и элегантные решения – мой профиль. Я создаю проекты, которые не перегружены, не навязчивы и по-хорошему просты. Без излишеств, без ненужных, вечно всплывающих окон, без назойливых продаж. Я предлагаю устойчивые решения, которые понятны каждому человеку, работают без нареканий и доступны к расширению или любым изменениям. </p>
+     
+                    <p class="about__stack"><strong>Основной стек:</strong> PHP, C#, HTML, CSS, JavaScript, SQL — и это не всё.</p>
                     <!-- Блок с достижениями -->
                     <ul class="about__stats">
                         <li>
@@ -416,11 +419,16 @@
                             </li>
                             <li>
                                 <div class="about__fact-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
                                 </div>
                                 <div class="about__fact-text">
-                                    <span class="about__fact-label">Опыт</span>
-                                    <span class="about__fact-value">Unity / Fullstack</span>
+                                    <span class="about__fact-label">Технологии</span>
+                                    <div class="about__fact-tags">
+                                        <span class="about__fact-tag">C#</span>
+                                        <span class="about__fact-tag">PHP</span>
+                                        <span class="about__fact-tag">SQL</span>
+                                        <span class="about__fact-tag">Unity</span>
+                                    </div>
                                 </div>
                             </li>
                         </ul>
@@ -430,48 +438,117 @@
             </div>
         </div>
     </section>
-
-    
-<!-- ========== ЧТО Я УМЕЮ ========== -->
-<section class="capabilities">
-    <div class="container">
-        <h2 class="section-title">Что я умею</h2>
-        <p class="section-subtitle">Кроме кода</p>
         
-        <div class="capabilities__grid">
-            <!-- Карточка 1: Работа с заказчиками -->
-            <div class="capability-card">
-                <h3 class="capability-card__title">Работа с заказчиками</h3>
-                <p class="capability-card__description">
-                    Общаюсь напрямую с заказчиками (включая иностранных), обсуждаю детали проектов, зоны риска и перспективы.
-                </p>
-                <div class="capability-card__tags user-select-none">
-                    <span class="tag tag--small">B2B</span>
-                    <span class="tag tag--small">Иностранные заказчики</span>
+    <!-- ========== МАНИФЕСТ ========== -->
+    <section class="manifest">
+        <div class="container">
+            <h2 class="section-title">Манифест разработки</h2>
+            <p class="section-subtitle">Во что я верю и как подхожу к работе</p>
+            
+            <div class="manifest__list">
+                <!-- Пункт 1 -->
+                <div class="manifest__item">
+                    <div class="manifest__number">01</div>
+                    <div class="manifest__content">
+                        <h3 class="manifest__title">Контролируемая простота</h3>
+                        <p class="manifest__desc">Я оставляю только то, что работает на результат. Убираю лишнее, чтобы проект было проще поддерживать и расширять. Сложные решения должны быть оправданы, а не использованы ради «модности».</p>
+                    </div>
+                </div>
+
+                <!-- Пункт 2 -->
+                <div class="manifest__item">
+                    <div class="manifest__number">02</div>
+                    <div class="manifest__content">
+                        <h3 class="manifest__title">Уважение к пользователю</h3>
+                        <p class="manifest__desc">Никаких раздражающих поп-апов, чат-ботов и навязанных окон. Пользователь должен быстро находить нужное, а не отбиваться от баннеров. Чистый и понятный интерфейс — это не роскошь, а стандарт.</p>
+                    </div>
+                </div>
+
+                <!-- Пункт 3 -->
+                <div class="manifest__item">
+                    <div class="manifest__number">03</div>
+                    <div class="manifest__content">
+                        <h3 class="manifest__title">Эко-разработка</h3>
+                        <p class="manifest__desc">Я ухожу от тяжелых сторонних библиотек и зависимостей, если задачу можно решить нативными методами. Это экономит бюджет клиента, ускоряет загрузку и снижает риски отказа внешних сервисов.</p>
+                    </div>
+                </div>
+
+                <!-- Пункт 4 -->
+                <div class="manifest__item">
+                    <div class="manifest__number">04</div>
+                    <div class="manifest__content">
+                        <h3 class="manifest__title">Задел на будущее</h3>
+                        <p class="manifest__desc">Пишу код с расчетом на рост. Любую новую функцию можно будет добавить без полной переделки сайта. Я строю архитектуру, которая сможет развиваться вместе с вашим бизнесом.</p>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Карточка 2: Влияние на процессы -->
-            <div class="capability-card">
-                <h3 class="capability-card__title">Влияние на процессы</h3>
-                <p class="capability-card__description">
-                    Предлагаю и внедряю способы оптимизации работы: новые технологии, инструменты, подходы.
-                </p>
-                <div class="capability-card__tags user-select-none">
-                    <span class="tag tag--small">Тех. внедрения</span>
-                    <span class="tag tag--small">Оптимизация</span>
+        </div>
+    </section>
+
+    <!-- ========== МОЙ СТЕК ========== -->
+<section class="tech-expertise">
+    <div class="container">
+        <h2 class="section-title">Мой стек</h2>
+        <p class="section-subtitle">Инструменты, которые я использую каждый день</p>
+        
+        <div class="tech-expertise__grid">
+            <!-- Карточка 1: Frontend -->
+            <div class="card">
+                <div class="tech-expertise__icon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+                </div>
+                <h3 class="card__title">Frontend</h3>
+                <p class="card__desc">Создание интерфейсов и клиентской части приложений.</p>
+                <div class="card__tags user-select-none">
+                    <span class="tag tag--small">JavaScript</span>
+                    <span class="tag tag--small">TypeScript</span>
+                    <span class="tag tag--small">React</span>
+                    <span class="tag tag--small">HTML/CSS</span>
                 </div>
             </div>
-            
-            <!-- Карточка 3: Командная работа -->
-            <div class="capability-card">
-                <h3 class="capability-card__title">Командная работа</h3>
-                <p class="capability-card__description">
-                    Работаю в связке с дизайнерами, 3D-специалистами и разработчиками. Общаюсь с нетехническими специалистами.
-                </p>
-                <div class="capability-card__tags user-select-none">
-                    <span class="tag tag--small">Кросс-функциональность</span>
-                    <span class="tag tag--small">Коммуникация</span>
+
+            <!-- Карточка 2: Backend & DB -->
+            <div class="card">
+                <div class="tech-expertise__icon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                </div>
+                <h3 class="card__title">Backend & DB</h3>
+                <p class="card__desc">Серверная логика, API и работа с базами данных.</p>
+                <div class="card__tags user-select-none">
+                    <span class="tag tag--small">PHP</span>
+                    <span class="tag tag--small">Node.js</span>
+                    <span class="tag tag--small">SQL</span>
+                    <span class="tag tag--small">REST API</span>
+                </div>
+            </div>
+
+            <!-- Карточка 3: GameDev -->
+            <div class="card">
+                <div class="tech-expertise__icon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11h4m-2-2v4"/><path d="M15 12h.01M18 10h.01"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>
+                </div>
+                <h3 class="card__title">GameDev</h3>
+                <p class="card__desc">Разработка игр под ПК, WebGL и мобильные платформы.</p>
+                <div class="card__tags user-select-none">
+                    <span class="tag tag--small">C#</span>
+                    <span class="tag tag--small">Unity</span>
+                    <span class="tag tag--small">WebGL</span>
+                    <span class="tag tag--small">Phaser.JS</span>
+                </div>
+            </div>
+
+            <!-- Карточка 4: Tools -->
+            <div class="card">
+                <div class="tech-expertise__icon-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <h3 class="card__title">Tools</h3>
+                <p class="card__desc">Инструменты для работы, дизайна и автоматизации.</p>
+                <div class="card__tags user-select-none">
+                    <span class="tag tag--small">Git</span>
+                    <span class="tag tag--small">Photoshop</span>
+                    <span class="tag tag--small">AI Tools</span>
+                    <span class="tag tag--small">FL Studio</span>
                 </div>
             </div>
         </div>
