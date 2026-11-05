@@ -92,7 +92,8 @@
 {
     #main-dev-logo-cosyplaid{
         opacity: 1; 
-        transform: scale(0.95); 
+        transform: scale(0.95);
+        transition: none !important;
     }
     #main-dev-logo-frame{
         opacity: 0.8;
