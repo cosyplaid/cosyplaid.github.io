@@ -252,7 +252,7 @@ ul {
    ========================================================================== */
 .hero {
     position: relative;
-    min-height: 90vh;
+    min-height: 800px;
     display: flex;
     align-items: center;
     padding-top: 70px;
@@ -574,7 +574,7 @@ ul {
 
 /* TECH EXPERTISE (МОЙ СТЕК) */
 .tech-expertise {
-    padding: 20px 0 40px 0;
+    padding: 80px;
     z-index: 2;
 }
 
@@ -854,8 +854,9 @@ ul {
 /* CONTACTS */
 .contacts {
     padding: 80px 0;
-    background: var(--bg-primary);
+    background: var(--bg-secondary);
     z-index: 2;
+    border-top: 1px solid var(--border-color);
 }
 
 .contacts__inner {

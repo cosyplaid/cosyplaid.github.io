@@ -85,16 +85,63 @@
 }
 
 /* ========================================
-   КАРТОЧКА УСЛУГИ
+   АККОРДЕОН (КАРТОЧКА УСЛУГИ)
    ======================================== */
 .price-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
-    padding: 28px 32px;
     transition: all 0.35s ease;
+    cursor: pointer;
 }
 
+/* Убираем стандартный маркер */
+.price-card__summary {
+    list-style: none;
+    padding: 24px 32px 20px;
+    position: relative;
+    outline: none;
+}
+
+.price-card__summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Стрелочка */
+.price-card__summary::after {
+    content: '';
+    position: absolute;
+    top: 36px;
+    right: 32px;
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid var(--text-muted);
+    border-bottom: 2px solid var(--text-muted);
+    transform: rotate(45deg);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.price-card[open] .price-card__summary::after {
+    transform: rotate(-135deg);
+    top: 42px;
+    border-color: var(--accent);
+}
+
+/* Контент аккордеона */
+.price-card__body {
+    padding: 0 32px 32px 32px;
+}
+
+.price-card[open] .price-card__body {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Заголовок карточки */
 .price-card__header {
     display: flex;
     justify-content: space-between;
@@ -116,6 +163,7 @@
     font-weight: 700;
     color: var(--accent);
     white-space: nowrap;
+    margin-right: 30px; /* Отступ от стрелочки */
 }
 
 .price-card__desc {
@@ -137,6 +185,15 @@
 
 .price-card__meta-sep {
     color: var(--border-color);
+}
+
+/* Дополнительно */
+.price-extra-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 32px; /* Возвращаем нормальные отступы для обычной карточки */
+    transition: all 0.35s ease;
 }
 
 /* ========================================
@@ -362,6 +419,24 @@
 }
 
 /* ========================================
+   HOVER И АКТИВНОЕ СОСТОЯНИЕ
+   ======================================== */
+@media (hover: hover) and (pointer: fine) {
+    .price-card:hover {
+        border-color: var(--accent);
+        box-shadow: var(--shadow);
+    }
+    .price-extra-card:hover {
+        border-color: var(--accent);
+        box-shadow: var(--shadow);
+    }
+}
+
+.price-card[open] {
+    border-color: var(--accent);
+}
+
+/* ========================================
    АДАПТИВ
    ======================================== */
 @media (max-width: 768px) {
@@ -377,8 +452,28 @@
         font-size: 1rem;
     }
 
-    .price-card {
-        padding: 20px 20px;
+    /* Уменьшаем отступы внутри аккордеона на мобилках */
+    .price-card__summary {
+        padding: 20px 20px 16px;
+    }
+    
+    .price-card__body {
+        padding: 0 20px 24px;
+    }
+
+    /* Смещаем стрелку под мобильные отступы */
+    .price-card__summary::after {
+        top: 32px;
+        right: 20px;
+    }
+    
+    .price-card[open] .price-card__summary::after {
+        top: 38px;
+    }
+    
+    /* Цена чуть ближе, так как стрелка сдвинута */
+    .price-card__price {
+        margin-right: 24px;
     }
 
     .price-card__title {
@@ -429,15 +524,5 @@
 
     .price-card__total strong {
         font-size: 1rem;
-    }
-}
-
-/* ========================================
-   HOVER — только для мыши
-   ======================================== */
-@media (hover: hover) and (pointer: fine) {
-    .price-card:hover {
-        border-color: var(--accent);
-        box-shadow: var(--shadow);
     }
 }

@@ -1,12 +1,12 @@
 // ========================================
-// МОДУЛЬ: Прайс (табы + скролл наверх)
+// МОДУЛЬ: Прайс (табы + скролл наверх + калькулятор цен)
 // ========================================
 window.App = window.App || {};
 
 window.App.price = (function() {
     'use strict';
 
-    const VALID = ['sites', 'bots', 'games', 'apps'];
+    const VALID = ['sites', 'bots', 'games', 'apps', 'marketing'];
     const DEFAULT = 'sites';
 
     function readHash() {
@@ -43,7 +43,87 @@ window.App.price = (function() {
         });
     }
 
+    // ========================================
+    // Ставка и цены
+    // ========================================
+    function getRate() {
+        // Читаем ставку из data-rate на body (по умолчанию 1500)
+        const bodyRate = document.body.dataset.rate;
+        return bodyRate ? parseInt(bodyRate, 10) : 1500;
+    }
+
+    function updateRateUI() {
+        const rate = getRate();
+        const formattedRate = new Intl.NumberFormat('ru-RU').format(rate);
+
+        // 1. Обновляем текст в HERO
+        const rateDisplays = document.querySelectorAll('[data-rate-display]');
+        rateDisplays.forEach(el => {
+            el.textContent = formattedRate;
+        });
+
+        // 2. Обновляем meta description
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+            // Заменяем "Средняя ставка x ₽/час" на актуальную
+            metaDesc.setAttribute('content', 
+                `Прайс-лист: сайты, боты, игры, приложения. Средняя ставка ${formattedRate} ₽/час. Ориентировочные цены, детальная смета по запросу.`
+            );
+        }
+    }
+
+    function calcPrices() {
+        const rate = getRate();
+        const cards = document.querySelectorAll('[data-price-card]');
+
+        cards.forEach(card => {
+            let totalHours = 0;
+
+            // Проходимся по каждому этапу в карточке
+            const stages = card.querySelectorAll('.price-stage[data-hours]');
+            
+            stages.forEach(stage => {
+                const hours = parseFloat(stage.dataset.hours);
+                if (isNaN(hours)) return;
+
+                // Считаем сумму для конкретного этапа
+                const cost = hours * rate;
+                const costElement = stage.querySelector('[data-price-cost]');
+
+                if (costElement) {
+                    if (hours === 0) {
+                        costElement.textContent = 'бесплатно';
+                    } else {
+                        const formattedCost = new Intl.NumberFormat('ru-RU').format(cost);
+                        const formattedHours = hours % 1 === 0 ? hours : hours.toFixed(1).replace('.', ',');
+                        costElement.textContent = `${formattedHours} ч / ${formattedCost} ₽`;
+                    }
+                }
+
+                totalHours += hours;
+            });
+
+            // Обновляем Итог
+            if (totalHours === 0) return;
+
+            const totalPrice = totalHours * rate;
+            const totalElement = card.querySelector('[data-price-total]');
+            
+            if (totalElement) {
+                const formattedPrice = new Intl.NumberFormat('ru-RU').format(totalPrice);
+                const formattedHours = totalHours % 1 === 0 ? totalHours : totalHours.toFixed(1).replace('.', ',');
+                totalElement.textContent = `${formattedHours} ч / ${formattedPrice} ₽`;
+            }
+        });
+    }
+
     function init() {
+        // Обновляем UI (ставку и meta) при загрузке
+        updateRateUI();
+        
+        // Считаем цены
+        calcPrices();
+
         const tabs = document.querySelectorAll('[data-price-tab]');
         if (!tabs.length) return;
 
@@ -64,6 +144,26 @@ window.App.price = (function() {
         });
 
         initLogoScroll();
+        initAccordionClose();
+    }
+
+    // ========================================
+    // Закрытие аккордеона по клику на контент
+    // ========================================
+    function initAccordionClose() {
+        document.querySelectorAll('.price-card__body').forEach(body => {
+            body.addEventListener('click', (e) => {
+                // Находим родительский <details>
+                const details = body.closest('details');
+                if (!details) return;
+
+                // Проверяем, что клик был не по ссылке (чтобы не мешать переходам)
+                if (e.target.closest('a')) return;
+
+                // Закрываем аккордеон
+                details.removeAttribute('open');
+            });
+        });
     }
 
     return { init };

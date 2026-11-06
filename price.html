@@ -23,7 +23,7 @@
     <script src="js/price.js" defer></script>
     <script src="js/main.js" defer></script>
 </head>
-<body>
+<body data-rate="1500">
 
     <!-- ========== ШАПКА ========== -->
     <header class="header user-select-none">
@@ -49,13 +49,19 @@
             <!-- HERO -->
             <div class="price-hero">
                 <h1 class="price-hero__title">Прайс-лист</h1>
-                <p class="price-hero__subtitle">Ориентировочные цены. Средняя ставка — 1 500 ₽/час.<br>Точная стоимость — после обсуждения задачи.</p>
+                <p class="price-hero__subtitle">
+                    Ориентировочные цены. Средняя ставка — <span data-rate-display>1 500</span> ₽/час.<br>
+                    Точная стоимость — после обсуждения задачи.
+                </p>            
             </div>
 
             <!-- ТАБЫ -->
             <div class="price-tabs" role="tablist" aria-label="Категории услуг">
                 <button class="price-tab active" type="button" role="tab" data-price-tab="sites" aria-selected="true">
                     <span>Сайты</span>
+                </button>
+                <button class="price-tab" type="button" role="tab" data-price-tab="marketing" aria-selected="false">
+                    <span>Маркетинг</span>
                 </button>
                 <button class="price-tab" type="button" role="tab" data-price-tab="bots" aria-selected="false">
                     <span>Боты</span>
@@ -71,33 +77,37 @@
             <!-- ========== ТАБ: САЙТЫ ========== -->
             <div class="price-content active" data-price-content="sites">
 
-                <!-- 1. Сайт-визитка -->
-                <article class="price-card">
-                    <header class="price-card__header">
+            <!-- 1. Сайт-визитка -->
+            <details class="price-card" data-price-card>
+                <summary class="price-card__summary">
+                    <div class="price-card__header">
                         <h2 class="price-card__title">Сайт-визитка</h2>
-                        <span class="price-card__price">от 18 000 ₽</span>
-                    </header>
+                        <span class="price-card__price">~ 15 000 ₽</span>
+                    </div>
                     <p class="price-card__desc">Одностраничный сайт для презентации услуги или бизнеса.</p>
                     <div class="price-card__meta">
                         <span class="tag tag--small">Срок: 2–3 дня</span>
                         <span class="price-card__meta-sep" aria-hidden="true">·</span>
-                        <span>~12 часов</span>
+                        <span>~14 часов</span>
                     </div>
+                </summary>
 
+                <!-- Скрытая часть (смета) -->
+                <div class="price-card__body">
                     <div class="price-stages">
                         <h3 class="price-stages__title">Состав работ по этапам:</h3>
                         <ol class="price-stages__list">
-                            <li class="price-stage">
+                            <li class="price-stage" data-hours="0">
                                 <div class="price-stage__head">
                                     <span class="price-stage__name">Консультация и обсуждение формата</span>
                                     <span class="price-stage__cost">бесплатно</span>
                                 </div>
                                 <p class="price-stage__detail">Обсуждаем задачу, бизнес, сроки.</p>
                             </li>
-                            <li class="price-stage">
+                            <li class="price-stage" data-hours="2">
                                 <div class="price-stage__head">
                                     <span class="price-stage__name">Брифинг, структура, прототип</span>
-                                    <span class="price-stage__cost">2 ч / 3 000 ₽</span>
+                                    <span class="price-stage__cost" data-price-cost>2 ч / 3 000 ₽</span>
                                 </div>
                                 <ul class="price-stage__bullets">
                                     <li>Брифинг: ниша, услуги, аудитория</li>
@@ -106,10 +116,10 @@
                                     <li>Согласование</li>
                                 </ul>
                             </li>
-                            <li class="price-stage">
+                            <li class="price-stage" data-hours="2">
                                 <div class="price-stage__head">
                                     <span class="price-stage__name">Шаблонный дизайн</span>
-                                    <span class="price-stage__cost">2 ч / 3 000 ₽</span>
+                                    <span class="price-stage__cost" data-price-cost>2 ч / 3 000 ₽</span>
                                 </div>
                                 <ul class="price-stage__bullets">
                                     <li>Подбор шаблона, цвета, шрифты</li>
@@ -117,295 +127,332 @@
                                     <li>Согласование</li>
                                 </ul>
                             </li>
-                            <li class="price-stage">
+                            <li class="price-stage" data-hours="1">
                                 <div class="price-stage__head">
                                     <span class="price-stage__name">Наполнение контентом</span>
-                                    <span class="price-stage__cost">1 ч / 1 500 ₽</span>
+                                    <span class="price-stage__cost" data-price-cost>1 ч / 1 500 ₽</span>
                                 </div>
                             </li>
-                            <li class="price-stage">
+                            <li class="price-stage" data-hours="4">
                                 <div class="price-stage__head">
                                     <span class="price-stage__name">Вёрстка (адаптив)</span>
-                                    <span class="price-stage__cost">4 ч / 6 000 ₽</span>
+                                    <span class="price-stage__cost" data-price-cost>4 ч / 6 000 ₽</span>
                                 </div>
                             </li>
-                            <li class="price-stage">
+                            <li class="price-stage" data-hours="2">
                                 <div class="price-stage__head">
                                     <span class="price-stage__name">Домен/хостинг, SEO-база, выкладка</span>
-                                    <span class="price-stage__cost">2 ч / 3 000 ₽</span>
+                                    <span class="price-stage__cost" data-price-cost>2 ч / 3 000 ₽</span>
                                 </div>
+                                <p class="price-stage__detail">Включает базовую SEO-оптимизацию (мета-теги, заголовки, скорость).</p>
                             </li>
-                            <li class="price-stage">
+                            <li class="price-stage" data-hours="2">
+                                <div class="price-stage__head">
+                                    <span class="price-stage__name">Регистрация в вебмастерах</span>
+                                    <span class="price-stage__cost" data-price-cost>2 ч / 3 000 ₽</span>
+                                </div>
+                                <p class="price-stage__detail">Добавление сайта в Яндекс.Вебмастер и Google Search Console, проверка индексации.</p>
+                            </li>
+                            <li class="price-stage" data-hours="0.5">
                                 <div class="price-stage__head">
                                     <span class="price-stage__name">Форма связи (если нужна)</span>
-                                    <span class="price-stage__cost">0,5 ч / 750 ₽</span>
+                                    <span class="price-stage__cost" data-price-cost>0,5 ч / 750 ₽</span>
                                 </div>
                             </li>
-                            <li class="price-stage">
+                            <li class="price-stage" data-hours="0.5">
                                 <div class="price-stage__head">
-                                    <span class="price-stage__name">Аналитика</span>
-                                    <span class="price-stage__cost">0,5 ч / 750 ₽</span>
+                                    <span class="price-stage__name">Аналитика (Яндекс.Метрика)</span>
+                                    <span class="price-stage__cost" data-price-cost>0,5 ч / 750 ₽</span>
                                 </div>
                             </li>
-                            <li class="price-stage">
+                            <li class="price-stage" data-hours="0.5">
                                 <div class="price-stage__head">
                                     <span class="price-stage__name">Обучение, сдача</span>
-                                    <span class="price-stage__cost">0,5 ч / 750 ₽</span>
+                                    <span class="price-stage__cost" data-price-cost>0,5 ч / 750 ₽</span>
                                 </div>
                             </li>
                         </ol>
 
                         <div class="price-card__total">
                             <span>Итого:</span>
-                            <strong>12 ч / 18 000 ₽</strong>
+                            <strong data-price-total>14 ч / 21 000 ₽</strong>
                         </div>
-                        <p class="price-card__note">Кастомный дизайн вместо шаблонного: +2–4 ч (3 000–6 000 ₽), итого 18 000–21 000 ₽.</p>
+                        <p class="price-card__note">Кастомный дизайн вместо шаблонного: +2–4 ч (3 000–6 000 ₽). <br>Дополнительная SEO (контент-стратегия, семантика, ссылки) — по запросу.</p>
                     </div>
-                </article>
+                </div>
+            </details>
 
                 <!-- 2. Лендинг -->
-                <article class="price-card">
-                    <header class="price-card__header">
-                        <h2 class="price-card__title">Лендинг</h2>
-                        <span class="price-card__price">от 27 000 ₽</span>
-                    </header>
-                    <p class="price-card__desc">Одностраничный сайт под конверсию: заявки, звонки, запись.</p>
-                    <div class="price-card__meta">
-                        <span class="tag tag--small">Срок: 3–5 дней</span>
-                        <span class="price-card__meta-sep" aria-hidden="true">·</span>
-                        <span>~18 часов</span>
-                    </div>
-
-                    <div class="price-stages">
-                        <h3 class="price-stages__title">Состав работ по этапам:</h3>
-                        <ol class="price-stages__list">
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Консультация и обсуждение формата</span>
-                                    <span class="price-stage__cost">бесплатно</span>
-                                </div>
-                                <p class="price-stage__detail">Обсуждаем продукт, цель лендинга, аудиторию, сроки.</p>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Брифинг, структура под конверсию, прототип</span>
-                                    <span class="price-stage__cost">3 ч / 4 500 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Шаблонный дизайн</span>
-                                    <span class="price-stage__cost">3 ч / 4 500 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Наполнение контентом</span>
-                                    <span class="price-stage__cost">1,5 ч / 2 250 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Вёрстка (адаптив)</span>
-                                    <span class="price-stage__cost">6 ч / 9 000 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Домен/хостинг, SEO-база, выкладка</span>
-                                    <span class="price-stage__cost">1,5 ч / 2 250 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Форма связи (если нужна)</span>
-                                    <span class="price-stage__cost">0,5 ч / 750 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Аналитика</span>
-                                    <span class="price-stage__cost">1 ч / 1 500 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Обучение, сдача</span>
-                                    <span class="price-stage__cost">0,5 ч / 750 ₽</span>
-                                </div>
-                            </li>
-                        </ol>
-
-                        <div class="price-card__total">
-                            <span>Итого:</span>
-                            <strong>18 ч / 27 000 ₽</strong>
+                <details class="price-card" data-price-card>
+                    <summary class="price-card__summary">
+                        <div class="price-card__header">
+                            <h2 class="price-card__title">Лендинг</h2>
+                            <span class="price-card__price">~ 22 500 ₽</span>
                         </div>
-                        <p class="price-card__note">Кастомный дизайн вместо шаблонного: +4–6 ч (6 000–9 000 ₽), итого 33 000–36 000 ₽.</p>
+                        <p class="price-card__desc">Одностраничный сайт под конверсию: заявки, звонки, запись.</p>
+                        <div class="price-card__meta">
+                            <span class="tag tag--small">Срок: 4–6 дней</span>
+                            <span class="price-card__meta-sep" aria-hidden="true">·</span>
+                            <span>~20 часов</span>
+                        </div>
+                    </summary>
+
+                    <div class="price-card__body">
+                        <div class="price-stages">
+                            <h3 class="price-stages__title">Состав работ по этапам:</h3>
+                            <ol class="price-stages__list">
+                                <li class="price-stage" data-hours="0">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Консультация и обсуждение формата</span>
+                                        <span class="price-stage__cost">бесплатно</span>
+                                    </div>
+                                    <p class="price-stage__detail">Обсуждаем продукт, цель лендинга, аудиторию, сроки.</p>
+                                </li>
+                                <li class="price-stage" data-hours="3">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Брифинг, структура под конверсию, прототип</span>
+                                        <span class="price-stage__cost" data-price-cost>3 ч / 4 500 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="3">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Шаблонный дизайн</span>
+                                        <span class="price-stage__cost" data-price-cost>3 ч / 4 500 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="1.5">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Наполнение контентом</span>
+                                        <span class="price-stage__cost" data-price-cost>1,5 ч / 2 250 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="6">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Вёрстка (адаптив)</span>
+                                        <span class="price-stage__cost" data-price-cost>6 ч / 9 000 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="1.5">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Домен/хостинг, SEO-база, выкладка</span>
+                                        <span class="price-stage__cost" data-price-cost>1,5 ч / 2 250 ₽</span>
+                                    </div>
+                                    <p class="price-stage__detail">Включает базовую SEO-оптимизацию (мета-теги, заголовки, скорость).</p>
+                                </li>
+                                <li class="price-stage" data-hours="2">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Регистрация в вебмастерах</span>
+                                        <span class="price-stage__cost" data-price-cost>2 ч / 3 000 ₽</span>
+                                    </div>
+                                    <p class="price-stage__detail">Добавление сайта в Яндекс.Вебмастер и Google Search Console, проверка индексации.</p>
+                                </li>
+                                <li class="price-stage" data-hours="0.5">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Форма связи (если нужна)</span>
+                                        <span class="price-stage__cost" data-price-cost>0,5 ч / 750 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="1">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Аналитика (Яндекс.Метрика)</span>
+                                        <span class="price-stage__cost" data-price-cost>1 ч / 1 500 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="0.5">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Обучение, сдача</span>
+                                        <span class="price-stage__cost" data-price-cost>0,5 ч / 750 ₽</span>
+                                    </div>
+                                </li>
+                            </ol>
+
+                            <div class="price-card__total">
+                                <span>Итого:</span>
+                                <strong data-price-total>20 ч / 30 000 ₽</strong>
+                            </div>
+                            <p class="price-card__note">Кастомный дизайн вместо шаблонного: +4–6 ч (6 000–9 000 ₽). <br>Дополнительная SEO (контент-стратегия, семантика, ссылки) — по запросу.</p>
+                        </div>
                     </div>
-                </article>
+                </details>
 
                 <!-- 3. Корпоративный сайт -->
-                <article class="price-card">
-                    <header class="price-card__header">
-                        <h2 class="price-card__title">Корпоративный сайт (5 страниц)</h2>
-                        <span class="price-card__price">от 48 000 ₽</span>
-                    </header>
-                    <p class="price-card__desc">Многостраничный сайт для компании: главная, о нас, услуги, цены/кейсы, контакты.</p>
-                    <div class="price-card__meta">
-                        <span class="tag tag--small">Срок: 7–10 дней</span>
-                        <span class="price-card__meta-sep" aria-hidden="true">·</span>
-                        <span>~32 часа</span>
-                    </div>
-
-                    <div class="price-stages">
-                        <h3 class="price-stages__title">Состав работ по этапам:</h3>
-                        <ol class="price-stages__list">
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Консультация и обсуждение формата</span>
-                                    <span class="price-stage__cost">бесплатно</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Брифинг, структура, прототипы</span>
-                                    <span class="price-stage__cost">5 ч / 7 500 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Шаблонный дизайн (единые стили)</span>
-                                    <span class="price-stage__cost">5 ч / 7 500 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Наполнение контентом</span>
-                                    <span class="price-stage__cost">3 ч / 4 500 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Вёрстка (адаптив)</span>
-                                    <span class="price-stage__cost">10 ч / 15 000 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Домен/хостинг, SEO по страницам, выкладка</span>
-                                    <span class="price-stage__cost">2,5 ч / 3 750 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Формы связи</span>
-                                    <span class="price-stage__cost">1 ч / 1 500 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Аналитика</span>
-                                    <span class="price-stage__cost">1 ч / 1 500 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Обучение, сдача</span>
-                                    <span class="price-stage__cost">1 ч / 1 500 ₽</span>
-                                </div>
-                            </li>
-                        </ol>
-
-                        <div class="price-card__total">
-                            <span>Итого:</span>
-                            <strong>32 ч / 48 000 ₽</strong>
+                <details class="price-card" data-price-card>
+                    <summary class="price-card__summary">
+                        <div class="price-card__header">
+                            <h2 class="price-card__title">Корпоративный сайт (5 страниц)</h2>
+                            <span class="price-card__price">~ 37 500 ₽</span>
                         </div>
-                        <p class="price-card__note">Кастомный дизайн вместо шаблонного: +6–10 ч (9 000–15 000 ₽), итого 57 000–63 000 ₽.</p>
+                        <p class="price-card__desc">Многостраничный сайт для компании: главная, о нас, услуги, цены/кейсы, контакты.</p>
+                        <div class="price-card__meta">
+                            <span class="tag tag--small">Срок: 8–12 дней</span>
+                            <span class="price-card__meta-sep" aria-hidden="true">·</span>
+                            <span>~34 часа</span>
+                        </div>
+                    </summary>
+
+                    <div class="price-card__body">
+                        <div class="price-stages">
+                            <h3 class="price-stages__title">Состав работ по этапам:</h3>
+                            <ol class="price-stages__list">
+                                <li class="price-stage" data-hours="0">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Консультация и обсуждение формата</span>
+                                        <span class="price-stage__cost">бесплатно</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="5">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Брифинг, структура, прототипы</span>
+                                        <span class="price-stage__cost" data-price-cost>5 ч / 7 500 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="5">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Шаблонный дизайн (единые стили)</span>
+                                        <span class="price-stage__cost" data-price-cost>5 ч / 7 500 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="3">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Наполнение контентом</span>
+                                        <span class="price-stage__cost" data-price-cost>3 ч / 4 500 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="10">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Вёрстка (адаптив)</span>
+                                        <span class="price-stage__cost" data-price-cost>10 ч / 15 000 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="2.5">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Домен/хостинг, SEO по страницам, выкладка</span>
+                                        <span class="price-stage__cost" data-price-cost>2,5 ч / 3 750 ₽</span>
+                                    </div>
+                                    <p class="price-stage__detail">Включает базовую SEO-оптимизацию для каждой страницы.</p>
+                                </li>
+                                <li class="price-stage" data-hours="2">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Регистрация в вебмастерах</span>
+                                        <span class="price-stage__cost" data-price-cost>2 ч / 3 000 ₽</span>
+                                    </div>
+                                    <p class="price-stage__detail">Добавление сайта в Яндекс.Вебмастер и Google Search Console, проверка индексации.</p>
+                                </li>
+                                <li class="price-stage" data-hours="1">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Формы связи</span>
+                                        <span class="price-stage__cost" data-price-cost>1 ч / 1 500 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="1">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Аналитика</span>
+                                        <span class="price-stage__cost" data-price-cost>1 ч / 1 500 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="1">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Обучение, сдача</span>
+                                        <span class="price-stage__cost" data-price-cost>1 ч / 1 500 ₽</span>
+                                    </div>
+                                </li>
+                            </ol>
+
+                            <div class="price-card__total">
+                                <span>Итого:</span>
+                                <strong data-price-total>34 ч / 51 000 ₽</strong>
+                            </div>
+                            <p class="price-card__note">Кастомный дизайн вместо шаблонного: +6–10 ч (9 000–15 000 ₽). <br>Дополнительная SEO (контент-стратегия, семантика, ссылки) — по запросу.</p>
+                        </div>
                     </div>
-                </article>
+                </details>
 
                 <!-- 4. CRM -->
-                <article class="price-card">
-                    <header class="price-card__header">
-                        <h2 class="price-card__title">CRM-система (самописная)</h2>
-                        <span class="price-card__price">от 100 000 ₽</span>
-                    </header>
-                    <p class="price-card__desc">Базовая версия: клиенты, сделки, задачи, статусы, роли, поиск, одна интеграция.</p>
-                    <div class="price-card__meta">
-                        <span class="tag tag--small">Срок: 3–4 недели</span>
-                        <span class="price-card__meta-sep" aria-hidden="true">·</span>
-                        <span>~69 часов</span>
-                    </div>
-
-                    <div class="price-stages">
-                        <h3 class="price-stages__title">Состав работ по этапам:</h3>
-                        <ol class="price-stages__list">
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Консультация и обсуждение процессов</span>
-                                    <span class="price-stage__cost">бесплатно</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Брифинг, анализ процессов, схема сущностей</span>
-                                    <span class="price-stage__cost">6 ч / 9 000 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Прототип интерфейса</span>
-                                    <span class="price-stage__cost">4 ч / 6 000 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Дизайн интерфейса</span>
-                                    <span class="price-stage__cost">5 ч / 7 500 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Разработка (backend + frontend)</span>
-                                    <span class="price-stage__cost">40 ч / 60 000 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Импорт данных и одна интеграция</span>
-                                    <span class="price-stage__cost">6 ч / 9 000 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Тестирование</span>
-                                    <span class="price-stage__cost">4 ч / 6 000 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Выкладка и настройка</span>
-                                    <span class="price-stage__cost">2 ч / 3 000 ₽</span>
-                                </div>
-                            </li>
-                            <li class="price-stage">
-                                <div class="price-stage__head">
-                                    <span class="price-stage__name">Обучение, сдача</span>
-                                    <span class="price-stage__cost">2 ч / 3 000 ₽</span>
-                                </div>
-                            </li>
-                        </ol>
-
-                        <div class="price-card__total">
-                            <span>Итого:</span>
-                            <strong>69 ч / 100 500 ₽</strong>
+                <details class="price-card" data-price-card>
+                    <summary class="price-card__summary">
+                        <div class="price-card__header">
+                            <h2 class="price-card__title">CRM-система (самописная)</h2>
+                            <span class="price-card__price">~ 99 000 ₽</span>
                         </div>
-                        <p class="price-card__note">Базовая версия. Отчёты, кастомные поля под процессы, уведомления, мобильная версия, дополнительные интеграции — расширение, рассчитывается почасово (1 500 ₽/час).</p>
+                        <p class="price-card__desc">Базовая версия: клиенты, сделки, задачи, статусы, роли, поиск, одна интеграция.</p>
+                        <div class="price-card__meta">
+                            <span class="tag tag--small">Срок: 3–4 недели</span>
+                            <span class="price-card__meta-sep" aria-hidden="true">·</span>
+                            <span>~69 часов</span>
+                        </div>
+                    </summary>
+
+                    <div class="price-card__body">
+                        <div class="price-stages">
+                            <h3 class="price-stages__title">Состав работ по этапам:</h3>
+                            <ol class="price-stages__list">
+                                <li class="price-stage" data-hours="0">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Консультация и обсуждение процессов</span>
+                                        <span class="price-stage__cost">бесплатно</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="6">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Брифинг, анализ процессов, схема сущностей</span>
+                                        <span class="price-stage__cost" data-price-cost>6 ч / 9 000 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="4">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Прототип интерфейса</span>
+                                        <span class="price-stage__cost" data-price-cost>4 ч / 6 000 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="5">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Дизайн интерфейса</span>
+                                        <span class="price-stage__cost" data-price-cost>5 ч / 7 500 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="40">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Разработка (backend + frontend)</span>
+                                        <span class="price-stage__cost" data-price-cost>40 ч / 60 000 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="6">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Импорт данных и одна интеграция</span>
+                                        <span class="price-stage__cost" data-price-cost>6 ч / 9 000 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="4">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Тестирование</span>
+                                        <span class="price-stage__cost" data-price-cost>4 ч / 6 000 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="2">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Выкладка и настройка</span>
+                                        <span class="price-stage__cost" data-price-cost>2 ч / 3 000 ₽</span>
+                                    </div>
+                                </li>
+                                <li class="price-stage" data-hours="2">
+                                    <div class="price-stage__head">
+                                        <span class="price-stage__name">Обучение, сдача</span>
+                                        <span class="price-stage__cost" data-price-cost>2 ч / 3 000 ₽</span>
+                                    </div>
+                                </li>
+                            </ol>
+
+                            <div class="price-card__total">
+                                <span>Итого:</span>
+                                <strong data-price-total>69 ч / 103 500 ₽</strong>
+                            </div>
+                            <p class="price-card__note">Базовая версия. Отчёты, кастомные поля под процессы, уведомления, мобильная версия, дополнительные интеграции — расширение, рассчитывается почасово (1 500 ₽/час).</p>
+                        </div>
                     </div>
-                </article>
+                </details>
 
                 <!-- ========== ДОПОЛНИТЕЛЬНО ========== -->
-                <section class="price-card"> 
+                <section class="price-extra-card"> 
                     <h2 class="price-extra__title">Дополнительно</h2>
                     <ul class="price-extra__list">
                         <li>Кастомный дизайн (вместо шаблонного) — +6 000–9 000 ₽</li>
@@ -413,6 +460,7 @@
                         <li>Логотип / фирменный стиль — по запросу</li>
                         <li>Поддержка после сдачи — 1 500 ₽/час</li>
                         <li>Дополнительные интеграции — 1 500 ₽/час</li>
+                        <li>Регистрация в вебмастерах (Яндекс, Google) — 3 000 ₽</li>
                     </ul>
                 </section>
             </div>
@@ -442,6 +490,104 @@
                     <p class="price-empty__desc">Скоро здесь появятся цены на приложения. А пока — обсудим задачу напрямую.</p>
                     <a href="https://t.me/cosyplaid" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Написать в Telegram</a>
                 </div>
+            </div>
+
+            <!-- ========== ТАБ: МАРКЕТИНГ ========== -->
+            <div class="price-content" data-price-content="marketing">
+
+                <!-- SEO-продвижение -->
+                <details class="price-card">
+                    <summary class="price-card__summary">
+                        <div class="price-card__header">
+                            <h2 class="price-card__title">SEO-продвижение</h2>
+                            <span class="price-card__price">~ 10 000 ₽</span>
+                        </div>
+                        <p class="price-card__desc">Комплексная оптимизация сайта для вывода в топ поисковых систем (Яндекс, Google).</p>
+                        <div class="price-card__meta">
+                            <span class="tag tag--small">Срок: 5–7 дней</span>
+                            <span class="price-card__meta-sep" aria-hidden="true">·</span>
+                            <span>~8 часов</span>
+                        </div>
+                    </summary>
+                    
+                    <div class="price-card__body">
+                        <div class="price-stages">
+                            <h3 class="price-stages__title">Состав работ (разовая настройка):</h3>
+                            <ul class="price-stage__bullets" style="padding-left: 0;">
+                                <li><strong>Технический аудит:</strong> проверка скорости, мобильной версии, ошибок, настройка robots.txt и sitemap.</li>
+                                <li><strong>Регистрация в вебмастерах:</strong> добавление сайта в Яндекс.Вебмастер и Google Search Console, подтверждение прав.</li>
+                                <li><strong>Семантика:</strong> сбор ключевых запросов, кластеризация под страницы.</li>
+                                <li><strong>Оптимизация страниц:</strong> написание Title, Description, H1-H6, перелинковка.</li>
+                                <li><strong>Базовая аналитика:</strong> настройка целей в Яндекс.Метрике.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="price-card__note" style="margin-top: 16px; border-top: 1px solid var(--border-color); padding-top: 16px;">
+                            <strong>Регулярное ведение:</strong> от 5 000 ₽/мес. Включает анализ позиций, расширение семантики, работу с контентом и внешними факторами.
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Яндекс.Бизнес -->
+                <details class="price-card">
+                    <summary class="price-card__summary">
+                        <div class="price-card__header">
+                            <h2 class="price-card__title">Яндекс.Бизнес</h2>
+                            <span class="price-card__price">~ 3 500 ₽</span>
+                        </div>
+                        <p class="price-card__desc">Создание и оформление карточки организации в Яндекс.Картах для привлечения локальных клиентов.</p>
+                        <div class="price-card__meta">
+                            <span class="tag tag--small">Срок: 2–4 дня</span>
+                            <span class="price-card__meta-sep" aria-hidden="true">·</span>
+                            <span>~3 часа</span>
+                        </div>
+                    </summary>
+
+                    <div class="price-card__body">
+                        <div class="price-stages">
+                            <h3 class="price-stages__title">Состав работ:</h3>
+                            <ul class="price-stage__bullets" style="padding-left: 0;">
+                                <li>Сбор и обработка фото/видео материалов</li>
+                                <li>Создание карточки и заполнение всех полей</li>
+                                <li>Подбор категорий и ключевых слов</li>
+                                <li>Прохождение модерации и правки (при необходимости)</li>
+                                <li>Настройка ссылок на сайт и соцсети</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- Оформление соцсетей -->
+                <details class="price-card">
+                    <summary class="price-card__summary">
+                        <div class="price-card__header">
+                            <h2 class="price-card__title">Оформление соцсетей</h2>
+                            <span class="price-card__price">~ 3 500 ₽</span>
+                        </div>
+                        <p class="price-card__desc">Оформление профиля ВКонтакте или Telegram для бизнеса.</p>
+                        <div class="price-card__meta">
+                            <span class="tag tag--small">Срок: 2–3 дня</span>
+                            <span class="price-card__meta-sep" aria-hidden="true">·</span>
+                            <span>~3 часа</span>
+                        </div>
+                    </summary>
+
+                    <div class="price-card__body">
+                        <div class="price-stages">
+                            <h3 class="price-stages__title">Состав работ:</h3>
+                            <ul class="price-stage__bullets" style="padding-left: 0;">
+                                <li>Создание аватара и обложки</li>
+                                <li>Написание описания и заполнение контактов</li>
+                                <li>Оформление первых 3–5 постов (текст + картинки)</li>
+                                <li>Настройка кнопок действия (написать, позвонить)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+                <!-- Блок примечания -->
+                <p class="price-card__note" style="text-align: center; margin-top: 24px;">
+                    * Регулярное ведение соцсетей и контент-стратегия рассчитываются отдельно.
+                </p>
             </div>
 
             <!-- ========== ЗА РАМКАМИ ========== -->
