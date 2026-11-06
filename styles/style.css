@@ -574,7 +574,7 @@ ul {
 
 /* TECH EXPERTISE (МОЙ СТЕК) */
 .tech-expertise {
-    padding: 80px;
+    padding: 80px 0;
     z-index: 2;
 }
 
