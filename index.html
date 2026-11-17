@@ -222,7 +222,11 @@
             <!-- Правая часть: Фото -->
             <div class="hero__image-wrapper">
                 <div class="hero__image-box">
-                    <img src="resources/img/hero.JPG" class="hero__image">
+                    <img class="hero__image"
+                        src="resources/img/hero.JPG"
+                        alt="IMAGE"
+                        fetchpriority="high"
+                        decoding="async"/>
                 </div>
             </div>
         </div>
@@ -569,11 +573,30 @@
             <p class="section-subtitle">Несколько работ, которыми я горжусь</p>
             
             <div class="projects__grid">
+                <!-- T-Line Website -->
+                <article class="project-card" data-project="t-line-website">
+                    <div class="project-card__image">
+                        <img src="resources/projects/T-Line_cover.jpg" alt="T-Line Website" 
+                            loading="lazy" decoding="async" width="1600" height="900"/>                        <span class="project-card__status">Сайт</span>
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">Сайт типографии T-Line</h3>
+                        <p class="project-card__description">Лэндинг для многопрофильной типографии.</p>
+                        <div class="project-card__tags user-select-none">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <a href="#" class="project-card__more user-select-none" data-modal="t-line-website">Подробнее</a>
+                    </div>
+                </article>
+
                 <!-- Epic Football -->
                 <article class="project-card" data-project="epic-football">
                     <div class="project-card__image">
-                        <img src="resources/projects/EpicFootball_Cover.png" alt="Epic Football" loading="lazy" decoding="async"/>
-                        <span class="project-card__status status--completed">Завершён</span>
+                        <img src="resources/projects/EpicFootball_Cover.png" alt="Epic Football"
+                            loading="lazy" decoding="async" width="1600" height="900"/>   
+                        <span class="project-card__status">Игра</span>
                     </div>
                     <div class="project-card__body">
                         <h3 class="project-card__title">Epic Football</h3>
@@ -587,29 +610,12 @@
                     </div>
                 </article>
                 
-                <!-- PM Website -->
-                <article class="project-card" data-project="pm-website">
-                    <div class="project-card__image">
-                        <img src="resources/projects/PM.png" alt="PM Website" loading="lazy" decoding="async"/>
-                        <span class="project-card__status status--completed">Завершён</span>
-                    </div>
-                    <div class="project-card__body">
-                        <h3 class="project-card__title">Сайт-визитка PM</h3>
-                        <p class="project-card__description">Landing page для проджект-менеджера.</p>
-                        <div class="project-card__tags user-select-none">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                        <a href="#" class="project-card__more user-select-none" data-modal="pm-website">Подробнее</a>
-                    </div>
-                </article>
-                
                 <!-- SkinUp 2D -->
                 <article class="project-card" data-project="skinup-2d">
                     <div class="project-card__image">
-                        <img src="resources/projects/SkinUp2D.png" alt="SkinUp 2D" loading="lazy" decoding="async"/>
-                        <span class="project-card__status status--pet-project">Пет-проект</span>
+                        <img src="resources/projects/SkinUp2D.png" alt="SkinUp 2D" 
+                            loading="lazy" decoding="async" width="1600" height="900"/>   
+                        <span class="project-card__status">ПО</span>
                     </div>
                     <div class="project-card__body">
                         <h3 class="project-card__title">SkinUp 2D</h3>
@@ -623,6 +629,10 @@
                     </div>
                 </article>
             </div>      
+
+            <!-- <div class="actions__group user-select-none">
+                <a href="projects.html" class="btn--primary">Все проекты</a>
+            </div> -->
         </div>
     </section>
 
@@ -746,6 +756,54 @@
 
     <!-- ====== МОДАЛЬНЫЕ ОКНА ====== -->
     
+    <!-- T-Line Website Modal -->
+    <div class="modal-overlay" id="modal-t-line-website">
+        <div class="modal"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="modal-t-line-website-title">
+            <button class="modal__close" aria-label="Закрыть">✕</button>
+            <div class="modal__scroll">
+                <div class="modal__image">
+                    <img src="resources/projects/T-Line_cover.jpg" alt="T-Line Website" 
+                        loading="lazy" decoding="async" width="1600" height="900"/>
+                </div>
+                <div class="modal__body">
+                    <h2 class="modal__title" id="modal-t-line-website-title">Сайт типографии T-Line</h2>
+                    <div class="modal__meta">
+                        <span class="modal__status">Завершён</span>
+                        <span class="modal__year">2025</span>
+                    </div>
+                    <div class="modal__description">
+                        <p><strong>Лендинг для многопрофильной типографии</strong></p>
+                        <p><strong>Особенности:</strong></p>
+                        <ul>
+                            <li>Адаптивная вёрстка</li>
+                            <li>Интеграция с VK и Яндекс</li>
+                            <li>SEO-дружественная структура</li>
+                        </ul>
+                        <p>
+                            <strong>Мой вклад:</strong>
+                            <span>полный цикл разработки.</span>
+                        </p>
+                    </div>
+                    <div class="modal__tags user-select-none">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Адаптив</span>
+                    </div>
+                    <div class="modal__links user-select-none">
+                        <a href="https://t-line72.ru"
+                           class="modal__link modal__link--active"
+                           target="_blank"
+                           rel="noopener noreferrer">Посмотреть сайт</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Epic Football Modal -->
     <div class="modal-overlay" id="modal-epic-football">
         <div class="modal"
@@ -755,12 +813,13 @@
             <button class="modal__close" aria-label="Закрыть">✕</button>
             <div class="modal__scroll">
                 <div class="modal__image">
-                    <img src="resources/projects/EpicFootball_Cover.png" alt="Epic Football" loading="lazy" decoding="async"/>
+                    <img src="resources/projects/EpicFootball_Cover.png" alt="Epic Football" 
+                        loading="lazy" decoding="async" width="1600" height="900"/>
                 </div>
                 <div class="modal__body">
                     <h2 class="modal__title" id="modal-epic-football-title">Epic Football</h2>
                     <div class="modal__meta">
-                        <span class="modal__status status--completed">Завершён</span>
+                        <span class="modal__status">Завершён</span>
                         <span class="modal__year">2025</span>
                     </div>
                     <div class="modal__description">
@@ -803,53 +862,6 @@
         </div>
     </div>
 
-    <!-- PM Website Modal -->
-    <div class="modal-overlay" id="modal-pm-website">
-        <div class="modal"
-             role="dialog"
-             aria-modal="true"
-             aria-labelledby="modal-pm-website-title">
-            <button class="modal__close" aria-label="Закрыть">✕</button>
-            <div class="modal__scroll">
-                <div class="modal__image">
-                    <img src="resources/projects/PM.png" alt="PM Website" loading="lazy" decoding="async"/>
-                </div>
-                <div class="modal__body">
-                    <h2 class="modal__title" id="modal-pm-website-title">Сайт-визитка PM</h2>
-                    <div class="modal__meta">
-                        <span class="modal__status status--completed">Завершён</span>
-                        <span class="modal__year">2025</span>
-                    </div>
-                    <div class="modal__description">
-                        <p><strong>Сайт-визитка для проджект-менеджера</strong> — минималистичный лендинг.</p>
-                        <p><strong>Особенности:</strong></p>
-                        <ul>
-                            <li>Адаптивная вёрстка</li>
-                            <li>Интеграция с Telegram и LinkedIn</li>
-                            <li>SEO-дружественная структура</li>
-                        </ul>
-                        <p>
-                            <strong>Мой вклад:</strong>
-                            <span>полный цикл разработки.</span>
-                        </p>
-                    </div>
-                    <div class="modal__tags user-select-none">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Адаптив</span>
-                    </div>
-                    <div class="modal__links user-select-none">
-                        <a href="https://c638cdf0-6b71-4ee4-8f39-f2ee18307a46.selstorage.ru/index.html"
-                           class="modal__link modal__link--active"
-                           target="_blank"
-                           rel="noopener noreferrer">Посмотреть сайт</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- SkinUp 2D Modal -->
     <div class="modal-overlay" id="modal-skinup-2d">
         <div class="modal"
@@ -859,12 +871,12 @@
             <button class="modal__close" aria-label="Закрыть">✕</button>
             <div class="modal__scroll">
                 <div class="modal__image">
-                    <img src="resources/projects/SkinUp2D.png" alt="SkinUp 2D" loading="lazy" decoding="async"/>
-                </div>
+                    <img src="resources/projects/SkinUp2D.png" alt="SkinUp 2D" 
+                        loading="lazy" decoding="async" width="1600" height="900"/>                </div>
                 <div class="modal__body">
                     <h2 class="modal__title" id="modal-skinup-2d-title">SkinUp 2D</h2>
                     <div class="modal__meta">
-                        <span class="modal__status status--pet-project">Пет-проект</span>
+                        <span class="modal__status">Пет-проект</span>
                         <span class="modal__year">2025</span>
                     </div>
                     <div class="modal__description">
